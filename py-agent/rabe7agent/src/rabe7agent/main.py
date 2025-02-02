@@ -16,7 +16,10 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'stock_selection': 'AAPL',  # Example stock selection
+        'topic': 'DeFi',            # Example topic if needed
+        'risk_tolerance': 'medium',  # Example risk tolerance if needed
+        'trading_strategy_preference': 'long_term'  # Example trading strategy preference if needed
     }
     Rabe7Agent().crew().kickoff(inputs=inputs)
 
@@ -26,7 +29,10 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs"
+        'stock_selection': 'AAPL',  # Example stock selection
+        'topic': 'DeFi',            # Example topic if needed
+        'risk_tolerance': 'medium',  # Example risk tolerance if needed
+        'trading_strategy_preference': 'long_term'  # Example trading strategy preference if needed
     }
     try:
         Rabe7Agent().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
