@@ -1,9 +1,9 @@
 research_task:
   description: >
-    Conduct comprehensive research on DeFi projects related toDeFi and gather actionable insights for market analysis.
+    Conduct comprehensive research on DeFi/ Crypto projects related to DeFi/ Crypto and gather actionable insights for market analysis.
     Include relevant data points, current trends, and detailed information for the year 2025.
   expected_output: >
-    A curated list of DeFi projects relevant toDeFi, complete with key data points and trends to inform market analysis for {stock_selection}.
+    A curated list of  DeFi/ Crypto projects relevant to DeFi/ Crypto, complete with key data points and trends to inform market analysis for {stock_selection}.
   agent: researcher
 
 data_analysis_task:
