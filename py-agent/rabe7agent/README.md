@@ -315,7 +315,7 @@ For support, questions, or feedback regarding the Rabe7Agent Crew or crewAI.
    
    <!-- Demo -->
   - ## :cinema: Demo
-  https://www.loom.com/share/244e002e8c5641f88377982e65d079ee?sid=d2cc4f25-5524-4174-9971-def84109f100
+
   
 
 
