@@ -248,91 +248,6 @@ Install dependencies with npm
 ```
    
 
-
-<!-- Run Locally -->
-### :running: Run Locally
-
-Clone the project
-
-```bash
-  git clone [(https://github.com/CryptoStein-PLEARN/LUMOS-HACKATHON/blob/main/README.md)]
-```
-
-Go to the project directory
-
-```bash
-  cd app/client
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run client
-```
-
-
-<!-- Deployment -->
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
-
-```bash
-  npx hardhat deploy
-```
-
-
-<!-- Smart Contract -->
-## :exploding_head: Smart Contracts
-
-- **TO BE FILLED**
- 
-
-
-<!-- Team -->
-## :wave: Team
-
-| Member | Title | Description | Linkedin | GitHub   |
-| ----------- | ----------- | ----------- |----------- |----------- |
-| Eman Herawy      | Blockchain Developer & Smart Contract Security Auditor  | Setting-up agents            |   https://www.linkedin.com/in/emanherawy/    | Eman Herawy |
-| Mohamed Sharabassy| Data Scientist     | Coordinate the project technicals | https://www.linkedin.com/in/mohamedsharabassy/                 | -             |
-| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | -        |
-| Nada Jabr  | Business Developer | Defining agents' roles, needed tools and plug-ins           | https://www.linkedin.com/in/nada-jabr-15838b39/  | NJ-2021        |
-
-
-
-
-<!-- Contact -->
-## :handshake: Contact
-
-  - Email: adm.cryptostein@gmail.com
-  - Twitter: @CryptoStein2022
-
-
-  <!-- Useful Links -->
-## :link: Useful Links
- https://plearngame.netlify.app/
- 
-   
-   <!-- Demo -->
-  - ## :cinema: Demo
-  https://www.loom.com/share/244e002e8c5641f88377982e65d079ee?sid=d2cc4f25-5524-4174-9971-def84109f100
-  
-<!-- Acknowledgments -->
-## :gem: Acknowledgements
-
- - [Readme Template](https://github.com/Louis3797/awesome-readme-template/)
- - [Polygon](https://polygon.technology/)
- - [Filecoin](https://filecoin.io)
- - [Hardhat](https://hardhat.org/)
- - [Ekolance](https://www.ekolance.io/)
- 
-
 ## Installation
 
 Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
@@ -358,6 +273,7 @@ crewai install
 - Modify `src/rabe7agent/crew.py` to add your own logic, tools and specific args
 - Modify `src/rabe7agent/main.py` to add custom inputs for your agents and tasks
 
+
 ## Running the Project
 
 To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
@@ -382,4 +298,24 @@ For support, questions, or feedback regarding the Rabe7Agent Crew or crewAI.
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
-Let's create wonders together with the power and simplicity of crewAI.
+  
+
+<!-- Team -->
+## :wave: Team
+
+| Member | Title | Description | Linkedin | GitHub   |
+| ----------- | ----------- | ----------- |----------- |----------- |
+| Eman Herawy      | Blockchain Developer & Smart Contract Security Auditor  | Setting-up agents            |   https://www.linkedin.com/in/emanherawy/    | Eman Herawy |
+| Mohamed Sharabassy| Data Scientist     | Coordinate the project technicals | https://www.linkedin.com/in/mohamedsharabassy/                 | -             |
+| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | -        |
+| Nada Jabr  | Business Developer | Defining agents' roles, needed tools and plug-ins           | https://www.linkedin.com/in/nada-jabr-15838b39/  | NJ-2021        |
+
+
+ 
+   
+   <!-- Demo -->
+  - ## :cinema: Demo
+  https://www.loom.com/share/244e002e8c5641f88377982e65d079ee?sid=d2cc4f25-5524-4174-9971-def84109f100
+  
+
+
