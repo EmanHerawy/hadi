@@ -1,6 +1,337 @@
-# Rabe7Agent Crew
+# HadiAgent Crew
 
-Welcome to the Rabe7Agent Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+
+<img width="893" alt="image" src="https://github.com/user-attachments/assets/8ca8d3b5-6f0c-4e69-83d1-3e73636f9ace" />
+
+
+<!-- About the Project -->
+## :star2: About the Project
+
+
+Hadi is a multi-agent system, powered by [crewAI](https://crewai.com), designed to analyze, validate, and execute Shariah-compliant and ethical investments in Decentralized Finance (DeFi). Our system leverages autonomous AI agents to research, assess risk, ensure compliance, and develop investment strategies tailored to ethical finance principles.
+
+Hadi aims to bridge the gap between DeFi innovation and responsible investing, allowing users to confidently participate in Halal and ethical financial opportunities while ensuring security, compliance, and profitability.
+
+
+
+
+<!-- Problems -->
+## :bomb: Problems
+The decentralized finance space is growing rapidly, but ethical investment barriers still exist:
+
+1️⃣ Lack of Shariah-Compliant DeFi Solutions
+Many DeFi platforms engage in interest-based (riba) and speculative (maysir) practices, making them non-compliant with Islamic finance principles.
+
+2️⃣ Complexity & Lack of Transparency in DeFi
+Investors struggle to assess protocol risks, governance structures, and compliance due to the lack of structured verification systems.
+
+3️⃣ Limited Awareness of ESG and Ethical Investment Opportunities
+Ethical investors find it challenging to discover and validate sustainable DeFi projects aligned with environmental, social, and governance (ESG) values.
+
+
+4️⃣ Manual Research & Inefficient Investment Strategies
+Investors spend significant time analyzing DeFi protocols without AI-powered insights, making decision-making slow and inefficient.
+
+
+<!-- Solution -->
+## :woman_technologist: Solution
+
+ 
+The decentralized finance space is growing rapidly, but ethical investment barriers still exist:
+
+1️⃣ Lack of Shariah-Compliant DeFi Solutions
+Many DeFi platforms engage in interest-based (riba) and speculative (maysir) practices, making them non-compliant with Islamic finance principles.
+
+
+2️⃣ Complexity & Lack of Transparency in DeFi
+Investors struggle to assess protocol risks, governance structures, and compliance due to the lack of structured verification systems.
+
+
+3️⃣ High Volatility and Smart Contract Vulnerabilities
+DeFi protocols often experience security exploits, market instability, and liquidity risks, leading to unexpected losses.
+
+
+4️⃣ Limited Awareness of ESG and Ethical Investment Opportunities
+Ethical investors find it challenging to discover and validate sustainable DeFi projects aligned with environmental, social, and governance (ESG) values.
+
+
+5️⃣ Manual Research & Inefficient Investment Strategies
+Investors spend significant time analyzing DeFi protocols without AI-powered insights, making decision-making slow and inefficient.
+
+
+## How Hadi Works
+Hadi introduces an agent-based system that automates the entire ethical investment process using CrewAI and blockchain plugins:
+
+🔹 Communication Agent → Collects investment goals from users.
+
+🔹 Manager Agent → Assigns tasks to other agents and manages execution.
+
+🔹 Research Agent → Gathers real-time data on DeFi projects.
+
+🔹 Validation Agent → Verifies if the projects comply with Shariah finance and ESG standards.
+
+🔹 Trading Strategy Agent → Builds a profitable and ethical investment strategy.
+
+🔹 Risk Advisor Agent → Assesses financial risks, smart contract vulnerabilities, and market conditions.
+
+🔹 Reporting Agent → Compiles findings into a detailed investment report for user approval.
+
+
+
+
+<!-- Deployed Dapp URL -->
+## :link: Deployed Dapp URL 
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<!-- TechStack -->
+### :space_invader: Tech Stack
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+  <li><a href="https://aws.amazon.com/">Amazon DynamoDB</a></li>
+  </ul>
+</details>
+
+
+<details>
+<summary>Backend</summary>
+  <ul> 
+    <li><a href="https://aws.amazon.com/it/elasticbeanstalk/">Amazon Cloud Elastic-beanstalk</a></li>
+    <li><a href="https://www.nodejs.org/">Nodejs</a></li>
+  </ul>
+</details>
+
+
+<details>
+<summary>Web3</summary>
+  <li><a href="https://hardhat.org/">Hardhat</a></li>
+  <li><a href="https://chain.link/keepers/">Chainlink</a></li>
+  <li><a href="https://docs.ethers.io/v5/">Etherjs</a></li>
+  <ul> 
+</details>
+  
+  <details>
+
+    
+  ---
+
+### :octopus: 💰 Bounties from Agentic Ethereum & How We Can Use Them!
+
+We can participate in Agentic Ethereum bounties to enhance Hadi’s capabilities and improve DeFi automation, interoperability, and security. Below are some relevant prizes and how we can integrate them:
+
+🔹 ** 1. Safe{Core} – Automating Smart Contract Wallets**
+💰 Bounty: Build AI agents that interact with Safe{Core} smart contract wallets.
+🔗 Safe{Core} Prize Details: https://ethglobal.com/events/agents/prizes
+
+
+✅ How We Can Use It:
+
+Implement an Automated DeFi Wallet Management Agent that securely manages investments, signs transactions, and prevents unauthorized access.
+Automate gas fee optimizations for users by predicting network conditions.
+
+🔹 **2. Airstack – Enabling Cross-Chain AI Agent Queries**
+💰 Bounty: Leverage Airstack to enable agents to fetch and analyze multi-chain data.
+🔗 Airstack Prize Details: https://ethglobal.com/events/agents/prizes
+
+
+✅ How We Can Use It:
+
+Research Agent can query Airstack APIs to collect on-chain data from multiple blockchains.
+Improve cross-chain investment strategies by analyzing liquidity and governance across Ethereum, Mantle, and other chains.
+
+
+🔹 **3. Gnosis Chain – Building DeFi Agents on Low-Cost Networks**
+💰 Bounty: Deploy agent-based DeFi automation on Gnosis Chain.
+🔗 Gnosis Chain Prize Details: https://ethglobal.com/events/agents/prizes
+
+✅ How We Can Use It:
+
+Deploy Hadi’s DeFi trading strategies on Gnosis Chain, allowing users to make low-cost, ethical investments.
+Reduce gas fees and improve accessibility for investors with smaller capital.
+
+🔹 **4. Uniswap – AI for Decentralized Trading**
+💰 Bounty: Build AI agents that optimize Uniswap liquidity provision.
+🔗 Uniswap Prize Details: https://ethglobal.com/events/agents/prizes
+
+✅ How We Can Use It:
+
+Trading Strategy Agent can optimize liquidity staking by analyzing Uniswap pools.
+Prevent impermanent loss using machine-learning-driven portfolio balancing.
+
+🚀 **How to Integrate These Bounties in Hadi**
+We can integrate these bounties into our existing agent economy by:
+
+1️⃣ Integrating Safe{Core} for Wallet Automation → Use Safe{Core} SDK for transaction signing.
+2️⃣ Using Airstack for Cross-Chain Research → Query multi-chain DeFi data to improve strategy development.
+3️⃣ Deploying on Gnosis Chain → Use lower-cost transactions for executing AI-driven trades.
+4️⃣ Leveraging Uniswap for AI-Driven Trading → Train Trading Strategy Agent to optimize LP investments.
+
+🌍 **Beneficial Outcomes**
+✔️ Enables Ethical & Shariah-Compliant DeFi Investing → Ensures investments align with moral finance principles.
+✔️ Increases Transparency → AI-driven Shariah validation and risk assessment improves trust.
+✔️ Reduces Investment Risks → AI agents automate risk management to protect user funds.
+✔️ Saves Time & Resources → Automates DeFi research and strategy execution.
+✔️ Supports ESG & Sustainable Finance → Identifies DeFi projects promoting environmental and ethical impact.
+
+
+
+**#### 🔜 What’s Next for **Hadi**?**
+🛠️ Expanding AI Agent Capabilities
+
+Implement Machine Learning models to enhance DeFi prediction accuracy.
+Train Trading Strategy Agents using real-world investment data.
+🔗 Integrating with More Blockchains
+
+Expand support for Polygon, Arbitrum, Optimism, and other L2 networks.
+Develop cross-chain AI agents for multi-chain investment strategies.
+🤖 Enhancing Security & Smart Contract Auditing
+
+Implement on-chain security scanners for rug pull detection.
+Improve automated Shariah compliance validation.
+🚀 Building Hadi dApp
+
+Launch a user-friendly web interface where investors can access AI-driven reports & strategies.
+Integrate safe, one-click DeFi execution based on AI recommendations.
+
+     
+
+
+<!-- Env Variables -->
+### :key: Environment Variables
+
+To run **Hadi**, you will need to add the following environment variables to your .env file
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
+
+<!-- Getting Started -->
+## 	:toolbox: Getting Started
+
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
+
+This project uses Node as package manager
+
+```bash
+ npm install
+```
+
+<!-- Installation -->
+### :gear: Installation
+
+Install dependencies with npm
+
+```bash
+  npm install 
+  cd app/client
+```
+   
+
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+Clone the project
+
+```bash
+  git clone [(https://github.com/CryptoStein-PLEARN/LUMOS-HACKATHON/blob/main/README.md)]
+```
+
+Go to the project directory
+
+```bash
+  cd app/client
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run client
+```
+
+
+<!-- Deployment -->
+### :triangular_flag_on_post: Deployment
+
+To deploy this project run
+
+```bash
+  npx hardhat deploy
+```
+
+
+<!-- Smart Contract -->
+## :exploding_head: Smart Contracts
+
+- **TO BE FILLED**
+ 
+
+
+<!-- Team -->
+## :wave: Team
+
+| Member | Title | Description | Linkedin | GitHub   |
+| ----------- | ----------- | ----------- |----------- |----------- |
+| Eman Herawy      | Blockchain Developer & Smart Contract Security Auditor  | Setting-up agents            |   https://www.linkedin.com/in/emanherawy/    | Eman Herawy |
+| Mohamed Sharabassy| Data Scientist     | Coordinate the project technicals | https://www.linkedin.com/in/mohamedsharabassy/                 | -             |
+| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | -        |
+| Nada Jabr  | Business Developer | Defining agents' roles, needed tools and plug-ins           | https://www.linkedin.com/in/nada-jabr-15838b39/  | NJ-2021        |
+
+
+
+
+<!-- Contact -->
+## :handshake: Contact
+
+  - Email: adm.cryptostein@gmail.com
+  - Twitter: @CryptoStein2022
+
+
+  <!-- Useful Links -->
+## :link: Useful Links
+ https://plearngame.netlify.app/
+ 
+   
+   <!-- Demo -->
+  - ## :cinema: Demo
+  https://www.loom.com/share/244e002e8c5641f88377982e65d079ee?sid=d2cc4f25-5524-4174-9971-def84109f100
+  
+<!-- Acknowledgments -->
+## :gem: Acknowledgements
+
+ - [Readme Template](https://github.com/Louis3797/awesome-readme-template/)
+ - [Polygon](https://polygon.technology/)
+ - [Filecoin](https://filecoin.io)
+ - [Hardhat](https://hardhat.org/)
+ - [Ekolance](https://www.ekolance.io/)
+ 
 
 ## Installation
 
