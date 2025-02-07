@@ -196,16 +196,20 @@ We can integrate these bounties into our existing agent economy by:
 
 
 **#### 🔜 What’s Next for **Hadi**?**
-
 🛠️ Expanding AI Agent Capabilities
+
 Implement Machine Learning models to enhance DeFi prediction accuracy.
 Train Trading Strategy Agents using real-world investment data.
-
 🔗 Integrating with More Blockchains
+
 Expand support for Polygon, Arbitrum, Optimism, and other L2 networks.
 Develop cross-chain AI agents for multi-chain investment strategies.
+🤖 Enhancing Security & Smart Contract Auditing
 
+Implement on-chain security scanners for rug pull detection.
+Improve automated Shariah compliance validation.
 🚀 Building Hadi dApp
+
 Launch a user-friendly web interface where investors can access AI-driven reports & strategies.
 Integrate safe, one-click DeFi execution based on AI recommendations.
 
