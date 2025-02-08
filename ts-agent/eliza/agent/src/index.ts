@@ -27,6 +27,7 @@ import { PrimusAdapter } from "@elizaos/plugin-primus";
 import { lightningPlugin } from "@elizaos/plugin-lightning";
 import { elizaCodeinPlugin, onchainJson } from "@elizaos/plugin-iq6900";
 import { dcapPlugin } from "@elizaos/plugin-dcap";
+
 import {
     AgentRuntime,
     CacheManager,
@@ -160,6 +161,11 @@ import { quickIntelPlugin } from "@elizaos/plugin-quick-intel";
 
 import { trikonPlugin } from "@elizaos/plugin-trikon";
 import arbitragePlugin from "@elizaos/plugin-arbitrage";
+
+
+// halal scanner
+import { halalScannerPlugin } from "@elizaos/plugin-halal-scanner";
+
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 
@@ -1304,6 +1310,10 @@ export async function createAgent(
             getSecret(character, "DESK_EXCHANGE_PRIVATE_KEY") ||
             getSecret(character, "DESK_EXCHANGE_NETWORK")
                 ? deskExchangePlugin
+                : null,
+            // halal scanner
+            getSecret(character, "HALAL_SCANNER_API_KEY")
+                ? halalScannerPlugin
                 : null,
         ]
             .flat()
