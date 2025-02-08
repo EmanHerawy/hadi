@@ -1,0 +1,15 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib", "dependencies"]
+
+[dependencies]
+forge-std = "1.9.6"
+"@openzeppelin-contracts" = "5.2.0"
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+[rpc_endpoints]
+arbChain = "${RPC_URL_ARBITRUM_SEPOLIA}"
+sepolia="${RPC_URL_ETH_SEPOLIA}"
+celo="${RPC_URL_CELO}"
+base="${RPC_URL_BASE_SEPOLIA}"
