@@ -6,6 +6,8 @@ libs = ["lib", "dependencies"]
 [dependencies]
 forge-std = "1.9.6"
 "@openzeppelin-contracts" = "5.2.0"
+[etherscan]
+sepolia = { key = "${ETHERSCAN_API_KEY}", chain = 11155111, url = "https://api-sepolia.arbiscan.io/api" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 [rpc_endpoints]
