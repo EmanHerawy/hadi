@@ -137,58 +137,6 @@ Hadi introduces an agent-based system that automates the entire ethical investme
 -------------------------------------------------------------------
 
 
-<!-- Bounties -->
-## :octopus: 💰 Bounties
-
-We can participate in Agentic Ethereum bounties to enhance Hadi’s capabilities and improve DeFi automation, interoperability, and security. Below are some relevant prizes and how we can integrate them:
-
-🔹 ** 1. ABC**
-💰 Bounty: Build AI agents that interact with Safe{Core} smart contract wallets.
-🔗 Safe{Core} Prize Details: https://ethglobal.com/events/agents/prizes
-
-
-✅ How We Can Use It:
-
-Implement an Automated DeFi Wallet Management Agent that securely manages investments, signs transactions, and prevents unauthorized access.
-Automate gas fee optimizations for users by predicting network conditions.
-
-🔹 **2. ABC**
-💰 Bounty: Leverage Airstack to enable agents to fetch and analyze multi-chain data.
-🔗 Airstack Prize Details: https://ethglobal.com/events/agents/prizes
-
-
-✅ How We Can Use It:
-
-Research Agent can query Airstack APIs to collect on-chain data from multiple blockchains.
-Improve cross-chain investment strategies by analyzing liquidity and governance across Ethereum, Mantle, and other chains.
-
-
-🔹 **3. ABC**
-💰 Bounty: Deploy agent-based DeFi automation on Gnosis Chain.
-🔗 Gnosis Chain Prize Details: https://ethglobal.com/events/agents/prizes
-
-✅ How We Can Use It:
-
-Deploy Hadi’s DeFi trading strategies on Gnosis Chain, allowing users to make low-cost, ethical investments.
-Reduce gas fees and improve accessibility for investors with smaller capital.
-
-🔹 **4. ABC**
-💰 Bounty: Build AI agents that optimize Uniswap liquidity provision.
-🔗 Uniswap Prize Details: https://ethglobal.com/events/agents/prizes
-
-✅ How We Can Use It:
-
-Trading Strategy Agent can optimize liquidity staking by analyzing Uniswap pools.
-Prevent impermanent loss using machine-learning-driven portfolio balancing.
-
-🚀 **How to Integrate These Bounties in Hadi**
-We can integrate these bounties into our existing agent economy by:
-
-1️⃣ Integrating Safe{Core} for Wallet Automation → Use Safe{Core} SDK for transaction signing.
-2️⃣ Using Airstack for Cross-Chain Research → Query multi-chain DeFi data to improve strategy development.
-3️⃣ Deploying on Gnosis Chain → Use lower-cost transactions for executing AI-driven trades.
-4️⃣ Leveraging Uniswap for AI-Driven Trading → Train Trading Strategy Agent to optimize LP investments.
-
 🌍 **Beneficial Outcomes**
 ✔️ Enables Ethical & Shariah-Compliant DeFi Investing → Ensures investments align with moral finance principles.
 ✔️ Increases Transparency → AI-driven Shariah validation and risk assessment improves trust.
