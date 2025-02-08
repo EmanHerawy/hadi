@@ -136,11 +136,9 @@ Hadi introduces an agent-based system that automates the entire ethical investme
 
 -------------------------------------------------------------------
 
-    
-
 
 <!-- Bounties -->
-**### :octopus: 💰 Bounties from Agentic Ethereum & How We Can Use Them!**
+## :octopus: 💰 Bounties
 
 We can participate in Agentic Ethereum bounties to enhance Hadi’s capabilities and improve DeFi automation, interoperability, and security. Below are some relevant prizes and how we can integrate them:
 
