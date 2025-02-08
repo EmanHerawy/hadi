@@ -42,8 +42,20 @@ export const getTokenStatusAction: Action = {
     ) => {
 
         const config = await validateHalalScannerConfig(runtime);
+        
+        // Check if the required properties exist
+        if (!config.HALAL_SCANNER_API_KEY || !config.HALAL_SCANNER_UUID) {
+            elizaLogger.error("Missing HALAL_SCANNER_API_KEY or HALAL_SCANNER_UUID in config");
+            callback({
+                text: "Configuration error: Missing API key or UUID.",
+                content: { error: "Missing HALAL_SCANNER_API_KEY or HALAL_SCANNER_UUID" },
+            });
+            return false;
+        }
+
         const halalScannerService = createHalalScannerService(
-            config.HALAL_SCANNER_API_KEY
+            config.HALAL_SCANNER_API_KEY,
+            config.HALAL_SCANNER_UUID
         );
 
         try {

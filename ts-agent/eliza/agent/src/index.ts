@@ -164,7 +164,7 @@ import arbitragePlugin from "@elizaos/plugin-arbitrage";
 
 
 // halal scanner
-import { halalScannerPlugin } from "@elizaos/plugin-halal-scanner";
+import { HalalScannerPlugin } from "@elizaos/plugin-halal-scanner";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -1313,7 +1313,7 @@ export async function createAgent(
                 : null,
             // halal scanner
             getSecret(character, "HALAL_SCANNER_API_KEY")
-                ? halalScannerPlugin
+                ? HalalScannerPlugin
                 : null,
         ]
             .flat()
