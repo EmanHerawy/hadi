@@ -6,10 +6,24 @@ import {
     IAgentRuntime,
     Memory,
     State,
+    ModelClass,
+    generateObject,
+    composeContext,
 } from "@elizaos/core";
 import { validateHalalScannerConfig } from "../environment";
 import { getHalalScannerExamples } from "../examples";
 import { createHalalScannerService } from "../services";
+import { TokenContentSchema, TokenContentScemaType } from "../types";
+import { halalScannerTemplate } from "../templates";
+
+export const isTokenContent = (
+    object: any
+): object is TokenContentScemaType => {
+    if (TokenContentSchema.safeParse(object).success) {
+        return true;
+    }
+    return false;
+};
 
 export const getTokenStatusAction: Action = {
     name: "HALAL_TOKEN_ASSESSMENT",
@@ -52,8 +66,41 @@ export const getTokenStatusAction: Action = {
             });
             return false;
         }
+        const context = composeContext({
+            state,
+            template: halalScannerTemplate,
+        });
+
+// Generates structured objects from a prompt using specified AI models and configuration options.
+
+        const content = await generateObject({
+            runtime,
+            context,
+            modelClass: ModelClass.SMALL,
+            schema: TokenContentSchema,
+        });
+
+        if (!isTokenContent(content.object)) {
+            const missingFields = getMissingTokenContent(
+                content.object
+            );
+            callback({
+                text: `Need more information about the swap. Please provide me ${missingFields}`,
+            });
+            return;
+        }
+
+        // Check if tokenName exists in content
+        if (!content.object.tokenName) {
+            callback({
+                text: "Missing token name in the content.",
+                content: { error: "Missing token name" },
+            });
+            return;
+        }
 
         const halalScannerService = createHalalScannerService(
+            content.object.tokenName,
             config.HALAL_SCANNER_API_KEY,
             config.HALAL_SCANNER_UUID
         );
@@ -80,3 +127,14 @@ export const getTokenStatusAction: Action = {
     },
     examples: getHalalScannerExamples as ActionExample[][],
 } as Action;
+
+export const getMissingTokenContent = (
+    content: Partial<TokenContentScemaType>
+): string => {
+    const missingFields = [];
+
+    if (typeof content.tokenName !== "string")
+        missingFields.push("token name");
+   
+    return missingFields.join(" and ");
+};

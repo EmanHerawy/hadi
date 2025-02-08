@@ -8,12 +8,16 @@ const fakeResponse = {
     justification: "This token is halal",
     riskAssessment: "This token is low risk"
 }
-export const createHalalScannerService = (apiKey: string, UUID: string) => {
+export const createHalalScannerService = (tokenName: string, apiKey: string, UUID: string) => {
     const checkTokenForHalalCompliance = async (): Promise<HalalScannerResponse> => {
-        if (!apiKey || !UUID) {
+        if (!apiKey || !UUID ) {
             throw new Error("Invalid parameters");
         }
-
+        console.log('tokenName: ', tokenName)
+        if (!tokenName) {
+            throw new Error("Token name is required");
+        }
+      
         try {
             const url = `${CREWAI_URL}Bearer ${apiKey}&UUID=${UUID}`; // Updated to use environment variables
             // Fetch the URL and check if the response is OK
