@@ -1,7 +1,8 @@
-# HadiAgent Crew
+   # HadiAgent Crew
 
 
-<img width="893" alt="image" src="https://github.com/user-attachments/assets/8ca8d3b5-6f0c-4e69-83d1-3e73636f9ace" />
+   <img width="300" alt="Screenshot 2025-02-08 at 18 08 56" src="https://github.com/user-attachments/assets/f3f9806a-10e4-462c-a38b-c91059c175f4" />
+
 
 
 <!-- About the Project -->
