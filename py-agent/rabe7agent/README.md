@@ -258,7 +258,7 @@ For support, questions, or feedback regarding the Rabe7Agent Crew or crewAI.
 | ----------- | ----------- | ----------- |----------- |----------- |
 | Eman Herawy      | Blockchain Developer & Smart Contract Security Auditor  | Setting-up agents            |   https://www.linkedin.com/in/emanherawy/    | Eman Herawy |
 | Mohamed Sharabassy| Data Scientist     | Coordinate the project technicals | https://www.linkedin.com/in/mohamedsharabassy/                 | -             |
-| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | -        |
+| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | GigaHierz       |
 | Nada Jabr  | Business Developer | Defining agents' roles, needed tools and plug-ins           | https://www.linkedin.com/in/nada-jabr-15838b39/  | NJ-2021        |
 
 
