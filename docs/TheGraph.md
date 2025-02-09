@@ -9,6 +9,8 @@
 - THE_GRAPH_SUBGRAPH_ID=68g9WSC4QTUJmMpuSbgLNENrcYha4mPmXhWGCoupM7kB#Dss7poW5WwiQDMPmgFu31Nqn4tsmCaYQhmuXTXYghvwm
 - we built a SubGraph Plugin for Eliza: https://github.com/EmanHerawy/hadi/tree/main/ts-agent/eliza/packages/plugin-subgraph
 
+Hadi is a DeFi assistant for Muslims. Having accurate and on time data is crucial for any kind of financial decisions.
+
 In our application, we utilize The Graph to:
 
 - **Index Blockchain Data**: We create custom subgraphs to index relevant blockchain data.
