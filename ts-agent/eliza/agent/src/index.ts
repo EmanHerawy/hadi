@@ -1269,9 +1269,9 @@ export async function createAgent(
                 ? emailPlugin
                 : null,
             getSecret(character, "SEI_PRIVATE_KEY") ? seiPlugin : null,
-            getSecret(character, "HYPERBOLIC_API_KEY")
-                ? hyperbolicPlugin
-                : null,
+            // getSecret(character, "HYPERBOLIC_API_KEY")
+            //     ? hyperbolicPlugin
+            //     : null,
             getSecret(character, "SUNO_API_KEY") ? sunoPlugin : null,
             getSecret(character, "UDIO_AUTH_TOKEN") ? udioPlugin : null,
             getSecret(character, "IMGFLIP_USERNAME") &&

@@ -32,7 +32,6 @@ export const sendTransactionAction: Action = {
     ) => {
         const config = await validatePrivyConfig(runtime);
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const authRequestKey = config.AUTH_REQUEST_KEY; // Get the authorization request key from the config
         const walletId = options.walletId as string; // Get wallet ID from options
         const caip2 = options.caip2 as string; // Get CAIP-2 identifier from options
         const transaction = options.transaction as { to: string; value: number }; // Get transaction details from options
