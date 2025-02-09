@@ -157,7 +157,7 @@ import { ankrPlugin } from "@elizaos/plugin-ankr";
 import { formPlugin } from "@elizaos/plugin-form";
 import { MongoClient } from "mongodb";
 import { quickIntelPlugin } from "@elizaos/plugin-quick-intel";
-
+import { SubgraphPlugin } from "@elizaos/plugin-subgraph";
 import { trikonPlugin } from "@elizaos/plugin-trikon";
 import arbitragePlugin from "@elizaos/plugin-arbitrage";
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -1300,6 +1300,10 @@ export async function createAgent(
             getSecret(character, "ARBITRAGE_FLASHBOTS_RELAY_SIGNING_KEY") &&
             getSecret(character, "ARBITRAGE_BUNDLE_EXECUTOR_ADDRESS")
                 ? arbitragePlugin
+                : null,
+            getSecret(character, "THE_GRAPH_API_KEY") &&
+            getSecret(character, "THE_GRAPH_SUBGRAPH_ID")
+                ? SubgraphPlugin
                 : null,
             getSecret(character, "DESK_EXCHANGE_PRIVATE_KEY") ||
             getSecret(character, "DESK_EXCHANGE_NETWORK")
