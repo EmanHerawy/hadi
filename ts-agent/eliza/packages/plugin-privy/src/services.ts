@@ -5,7 +5,7 @@ import {
 } from "./types/policies";
 import { PrivyCreateWalletResponse } from "./types/wallets";
 
-const BASE_URL = "https://api.privy.io/v1/policies";
+const BASE_URL = "https://api.privy.io/v1/wallets";
 
 export const createWalletService = (privyAppID: string, privyAppSecret: string) => {
     const createWallet = async (policy_ids: string[]): Promise<PrivyCreateWalletResponse> => {
@@ -20,10 +20,11 @@ export const createWalletService = (privyAppID: string, privyAppSecret: string) 
         //     headers['privy-authorization-signature'] = authRequestKey;
         // }
 
+        console.log("policy_ids", policy_ids);
+        
+
         const wallet = {
             "chain_type": "ethereum",
-            authorization_key_ids : [],
-            authorization_threshold: 10,
             policy_ids
         };
 
@@ -228,9 +229,6 @@ export const createPolicyService = (name: string, privyAppID: string, privyAppSe
             throw new Error("Invalid parameters");
         }
 
-        console.log("Add Token Name", tokenName);
-        
-
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
             'privy-app-id': privyAppID,
@@ -241,7 +239,6 @@ export const createPolicyService = (name: string, privyAppID: string, privyAppSe
             const url = `${BASE_URL}/${policyId}`;
             const existingPolicy = await getPolicy(policyId);
             const updatedPolicy = remove ? denylistToken(existingPolicy, tokenName, tokenAddress) : allowlistToken(existingPolicy, tokenName, tokenAddress);
-            console.log("Updated Policy", updatedPolicy);
             
             const response = await fetch(url, {
                 method: 'PATCH',
@@ -315,8 +312,6 @@ function allowlistToken(existingPolicy: PrivyPolicyResponse, tokenName: string, 
         ],
         "action": "ALLOW"
     };
-
-    console.log("Allowlisted", newRule);
     
 
     // Create a deep copy of the existing policy

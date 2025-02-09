@@ -41,14 +41,18 @@ Please add this BNB token with the address 0xB8c77482e45F1F44dE1745F52C74426C631
 ```
 
 
+Create a Wallet that autonatically has these policies implemented
+
+```
+Hi Hadi, 
+I need to create a new wallet that has Sharia law implemented.
+```
+
 Our Agent would create all server wallet with this policy as default. 
 
 - currently the only Policies that can be created through this plugin are allowlisting of token addresses. 
+- TODO: Add roadmap
 
-The following questions can be asked:
-
-- Is this token halal?
-- Is this token Sharia confirm?
 
 
 the following action can be taken
