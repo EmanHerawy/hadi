@@ -57,7 +57,7 @@ The plugin requires the following environment variables:
 #Privy Configuration - Required Settings
 PRIVY_APP_ID="your-app-idea"                    # Privy App ID. Get yours here: https://dashboard.privy.io/
 PRIVY_APP_SECRET="your-privy-app-secret"        # Privy App ID Secret for authentication
-AUTH_REQUEST_KEY="your-auth-request-key"        # Authentification Reuqest Key. Optional, but required once enabled
+AUTH_REQUEST_KEY="your-auth-request-key"        # Authentification Request Key. Optional, but required once enabled. Required for production
 
 
 # Hyperbolic Provider Configuration

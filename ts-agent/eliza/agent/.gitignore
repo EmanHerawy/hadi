@@ -1,4 +1,4 @@
-*.ts
+
 !index.ts
 .env
 *.env
