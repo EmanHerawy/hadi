@@ -152,14 +152,13 @@ export const createWalletExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "I need to create a new wallet with authorization keys key1 and key2.",
+                text: "I need to create a new wallet that has Sharia law implemented.",
             },
         },
-        
         {
             user: "{{agent}}",
             content: {
-                text: "I'll create a new wallet with the specified authorization keys.",
+                text: "I'll create a new wallet with the Sharia law implemented.",
                 action: "PRIVY_CREATE_WALLET",
             },
         },
@@ -173,6 +172,196 @@ export const createWalletExamples: ActionExample[][] = [
                         address: "<wallet_address>",
                         chain_type: "ethereum",
                         policy_ids: ["Hadi"],
+                    },
+                },
+            },
+        },
+    ],
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I want a halal wallet.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll create a halal wallet for you.",
+                action: "PRIVY_CREATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Halal wallet created successfully! Wallet ID: <wallet_id>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["Halal"],
+                    },
+                },
+            },
+        },
+    ],
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I want a wallet with halal policies.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll create a wallet that complies with halal policies.",
+                action: "PRIVY_CREATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Wallet with halal policies created successfully! Wallet ID: <wallet_id>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["HalalPolicies"],
+                    },
+                },
+            },
+        },
+    ],
+];
+
+export const updateWalletExamples: ActionExample[][] = [
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I need to create a new wallet that has Sharia law implemented.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll create a new wallet with the Sharia law implemented.",
+                action: "PRIVY_CREATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Wallet created successfully! Wallet ID: <wallet_id>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["Hadi"],
+                    },
+                },
+            },
+        },
+    ],
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I want a halal wallet.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll create a halal wallet for you.",
+                action: "PRIVY_CREATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Halal wallet created successfully! Wallet ID: <wallet_id>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["Halal"],
+                    },
+                },
+            },
+        },
+    ],
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I want a wallet with halal policies.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll create a wallet that complies with halal policies.",
+                action: "PRIVY_CREATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Wallet with halal policies created successfully! Wallet ID: <wallet_id>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["HalalPolicies"],
+                    },
+                },
+            },
+        },
+    ],
+    [
+        {
+            user: "{{user1}}",
+            content: {
+                text: "Can I add a new policy to my wallet?",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Sure! Please provide the policy ID you want to add.",
+                action: "PRIVY_UPDATE_WALLET",
+            },
+        },
+        {
+            user: "{{user1}}",
+            content: {
+                text: "I want to add the policy ID 'NewPolicy123'.",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "I'll add the policy 'NewPolicy123' to your wallet.",
+                action: "PRIVY_UPDATE_WALLET",
+            },
+        },
+        {
+            user: "{{agent}}",
+            content: {
+                text: "Policy added successfully! Wallet ID: <wallet_id>, Updated Policies: <updated_policy_ids>",
+                content: {
+                    wallet: {
+                        id: "<wallet_id>",
+                        address: "<wallet_address>",
+                        chain_type: "ethereum",
+                        policy_ids: ["Hadi", "NewPolicy123"], // Example of updated policies
                     },
                 },
             },

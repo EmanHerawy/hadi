@@ -5,7 +5,7 @@ import {
 } from "./types/policies";
 import { PrivyCreateWalletResponse } from "./types/wallets";
 
-const BASE_URL = "https://api.privy.io/v1/policies";
+const BASE_URL = "https://api.privy.io/v1/wallets";
 
 export const createWalletService = (privyAppID: string, privyAppSecret: string) => {
     const createWallet = async (policy_ids: string[]): Promise<PrivyCreateWalletResponse> => {
@@ -20,10 +20,11 @@ export const createWalletService = (privyAppID: string, privyAppSecret: string) 
         //     headers['privy-authorization-signature'] = authRequestKey;
         // }
 
+        console.log("policy_ids", policy_ids);
+        
+
         const wallet = {
             "chain_type": "ethereum",
-            authorization_key_ids : [],
-            authorization_threshold: 10,
             policy_ids
         };
 
