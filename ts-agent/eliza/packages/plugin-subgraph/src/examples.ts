@@ -41,8 +41,8 @@ export const subgraphQueryExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "I will retrieve the token name and symbol from the subgraph.",
-                action: "SUBGRAPH_QUERY",
+                text: "I will retrieve the token name and symbol from the subgraph in Eigenlayer.",
+                action: "QUERY_TOKENS_INFO",
             },
         }
     ],
@@ -86,8 +86,8 @@ export const subgraphQueryExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "Let me query the subgraph for the top 10 users.",
-                action: "SUBGRAPH_QUERY",
+                text: "Let me query the subgraph for the top 10 active accounts in Eigenlayer.",
+                action: "QUERY_ACTIVE_ACCOUNTS",
             },
         }
     ],

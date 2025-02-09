@@ -16,6 +16,15 @@ export interface TokenTransferResponse {
     value: string;
  
 }
+export interface TokenQueryResponses {
+    tokens: TokenQueryResponse[];
+}
+export interface TokenQueryResponse {
+    id: string;
+    name: string;
+    symbol: string;
+    decimals: number;
+}
 
 export interface TokenApprovalResponse {
     id: string;

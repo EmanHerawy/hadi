@@ -15,18 +15,18 @@ export const createTheGraphService = (tokensQuery: string, apiKey: string) => {
                 uri: apiKey,
                 cache: new InMemoryCache(),
               })
-              client
+              const data = await client
               .query({
                 query: gql(tokensQuery),
               })
               .then((data) => {
-                console.log('Subgraph data: ', data)
-                return data;
+                console.log('Subgraph data: ', data.data)
+                return data.data;
               })
               .catch((err) => {
                 console.log('Error fetching data: ', err)
               })
-         
+              return data;
         } catch (error: any) {
             console.error("The Graph API Error:", error.message);
             throw error;
