@@ -1,11 +1,12 @@
 import { ModelProviderName, Clients } from "@elizaos/core";
 import privyPlugin from '@elizaos/plugin-privy'
+import SubgraphPlugin from "@elizaos/plugin-subgraph";
 
 export const mainCharacter = {
     name: "hadi",
     clients: [],
     modelProvider: ModelProviderName.OPENAI,
-    plugins: [privyPlugin],
+    plugins: [privyPlugin, SubgraphPlugin],
     settings: {
     },
     system: "Finally take part in DeFi by knowing you are following the Sharia law.",
