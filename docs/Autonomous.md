@@ -6,7 +6,22 @@
 ## Overview
 [Autonome](https://autonome.io/) is a platform for **building, deploying, and distributing autonomous AI agents**. It supports frameworks like **Eliza & AgentKit**, allowing **secure AI hosting** with **TEE plug-in** for enhanced **verifiability and security**.
 
-## 🚀 How Hadi AI Uses Autonome
+
+## Hadi Deployments on Autonome - Links
+
+
+## Who worked on the deployment of Autonome
+
+https://github.com/Mo-Sharabassy
+https://github.com/EmanHerawy
+
+
+## DevEX Feedback
+
+
+
+
+##  How Hadi AI Uses Autonome
 Hadi AI is a **multi-agent system for ethical DeFi investments**. We use Autonome to:  
 ✅ **Deploy AI agents** that research, validate, and strategize DeFi investments.  
 ✅ **Secure transactions & execution** using the **TEE plug-in**.  
@@ -30,10 +45,8 @@ Hadi AI is a **multi-agent system for ethical DeFi investments**. We use Autonom
     )
     ```
 
-3. **Enable Telegram Bot for Users**:
-    ```python
-    start_telegram_bot(agent=hosted_agent)
-    ```
+
+
 
 ## 🔧 Setup Instructions
 1. **Clone Hadi AI Repo**:
@@ -60,3 +73,6 @@ Hadi AI is a **multi-agent system for ethical DeFi investments**. We use Autonom
 ## 🔮 Future Enhancements
 🚀 **Expand Autonome deployment** for AI-driven trading execution.  
 🚀 **Add web-based AI dashboards** for DeFi insights.  
+
+
+

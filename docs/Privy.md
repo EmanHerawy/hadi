@@ -11,6 +11,9 @@
 ✅ **Implements server wallets for AI-driven DeFi investments.**  
 ✅ **Uses Privy’s Policy Engine to allowlist tokens.**  
 
+## Why did we choose Privy 
+
+
 ## 🛠️ Technical Implementation
 
 Keywords: Policy, Allowlist
@@ -64,10 +67,11 @@ the following action can be taken
 
 The halalScannerToken could call the pluginPrivy to update the policy to add a token to the allowlist. 
 
+## Who built it
 
+https://github.com/GigaHierz
 
-
-## Docs Feedback
+## DevEX Feedback
 
 - Example on the [Create Policy page](https://docs.privy.io/guide/server-wallets/policies/create#example) adn update policy has to many commas and is throwing an Invalid JSON error
 - The issues were:
