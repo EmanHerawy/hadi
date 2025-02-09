@@ -33,6 +33,8 @@ Keywords: Policy, Allowlist
 
 - For this project, we created a **policy called Hadi** with the ID: **zh4ugr13u3maafdrmrvvrt40**
 
+- [Demo Video](https://www.loom.com/share/789d0dc014374db3844d47a1cd4fa9b7?sid=083437be-9ae8-406f-9414-fc453b53871e) to showcase the implemented actions
+
 ## Privy x Hadi Actions 💛
 
 ### Get a List of All Sharia Compliant Tokens
