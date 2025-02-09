@@ -6,6 +6,9 @@
 
 ## How We Use It
 
+- THE_GRAPH_SUBGRAPH_ID=68g9WSC4QTUJmMpuSbgLNENrcYha4mPmXhWGCoupM7kB#Dss7poW5WwiQDMPmgFu31Nqn4tsmCaYQhmuXTXYghvwm
+- we built a SubGraph Plugin for Eliza: https://github.com/EmanHerawy/hadi/tree/main/ts-agent/eliza/packages/plugin-subgraph
+
 In our application, we utilize The Graph to:
 
 - **Index Blockchain Data**: We create custom subgraphs to index relevant blockchain data.
