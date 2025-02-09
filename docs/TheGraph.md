@@ -30,7 +30,26 @@ We chose The Graph for several reasons:
 - **Community Support**: The Graph has a strong community and ecosystem, providing resources and support for developers.
 
 
-## DevEX Feedback
+### Developer Experience (DevEx) Feedback
+
+While working with The Graph, we encountered several challenges and learning experiences:
+
+
+
+- **CLI Experience**: The command-line interface (CLI) made the setup process straightforward and streamlined.
+
+- **Publishing Challenges**: Deploying to **Arbitrum Sepolia** was particularly difficult due to the immaturity of the RPC and the faucet. After multiple attempts, we successfully published the subgraph.
+
+- **Querying Issues**: Querying was not feasible as we encountered the error: `subgraph not found: no allocations`. Despite reaching out to the team for support, we have yet to receive a response.
+
+- **Workaround**: Due to the lack of support and allocation issues, we had to pivot and use a **public subgraph** to test our plugin instead.
+
+
+
+### Resources
+
+- **Subgraph Link**: [Halal Scanner Subgraph](https://thegraph.com/studio/subgraph/halal-scanner/)
+- **Subgraph Link**: [Halal Scanner Subgraph](https://thegraph.com/studio/subgraph/halal-scanner/)
 
 ## Future Enhancements
 
