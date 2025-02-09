@@ -34,12 +34,17 @@ export const updatePolicyAction: Action = {
         const config = await validatePrivyConfig(runtime);
         const privyAppID = config.PRIVY_APP_ID; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const policyId = options.policyId as string; // Get policy ID from options
-        const tokenName  = options.tokenName as string; // Get tokenName from options
-        const tokenAddress = options.tokenAddress as string; // Get tokenAddress from options
-        const remove = options.remove as boolean; // Get remove from options
+        const policyId = options.policyId as string || "zh4ugr13u3maafdrmrvvrt40"; // Get policy ID from options
+        const tokenName = message.content?.text && extractTokenSymbol(message.content.text) || " BNB"; // Get policy name from options
+        const tokenAddress = message.content?.text && extractTokenAddress(message.content.text); // Get tokenAddress from options
+        const remove = message.content?.text?.toLowerCase().includes("remove"); // Get remove from message
 
-        if (!policyId || (!tokenName && !tokenAddress)) {
+        console.log("Message", message.content.text);
+        console.log("tokenName", tokenName);
+        console.log("tokenAddress", tokenAddress);
+        console.log("remove", remove);
+
+        if (!policyId || (!tokenName || !tokenAddress)) {
             callback({
                 text: "Policy ID and data are required.",
                 content: { error: "Policy ID and data are required." },
@@ -47,14 +52,19 @@ export const updatePolicyAction: Action = {
             return false;
         }
 
-        const policyService = createPolicyService("", privyAppID, privyAppSecret, authRequestKey); // Create policy service instance
+        const policyService = createPolicyService("", privyAppID, privyAppSecret); // Create policy service instance
+        const messageText = remove
+            ? `Policy updated successfully! Token ${tokenName} with address ${tokenAddress} has been removed.`
+            : `Policy updated successfully! Token ${tokenName} with address ${tokenAddress} has been added.`;
 
         try {
             const updatedPolicy = await policyService.updatePolicy(policyId, tokenName, tokenAddress, remove === true); // Call the updatePolicy function
+            console.log("updatedPolicy", updatedPolicy);
+            
             elizaLogger.success(`Successfully updated policy with ID: ${updatedPolicy.id}`);
             if (callback) {
                 callback({
-                    text: `Policy updated successfully! Policy ID: ${updatedPolicy.id}`,
+                    text: messageText,
                     content: { policy: updatedPolicy },
                 });
                 return true;
@@ -70,3 +80,16 @@ export const updatePolicyAction: Action = {
     },
     examples: updatePolicyExamples as ActionExample[][], // Assuming you have examples for this action
 } as Action;
+
+
+function extractTokenSymbol(input: string): string | null {
+    const symbolPattern = /\b[A-Z]{2,6}\b/; // Regex pattern for token symbols (2 to 6 uppercase letters)
+    const match = input.match(symbolPattern);
+    return match ? match[0] : null; // Return the matched symbol or null if not found
+}
+
+function extractTokenAddress(input: string): string | null {
+    const addressPattern = /0x[a-fA-F0-9]{40}/; // Regex pattern for Ethereum address
+    const match = input.match(addressPattern);
+    return match ? match[0] : null; // Return the matched address or null if not found
+}

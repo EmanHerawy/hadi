@@ -33,7 +33,7 @@ export const createPolicyAction: Action = {
         const config = await validatePrivyConfig(runtime);
         const privyAppID = config.PRIVY_APP_ID; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const name = options.name as string; // Get name from options
+        const name = options.name as string || " Hadi"; // Get policy name from options
 
         if (!name) {
             callback({
@@ -43,7 +43,7 @@ export const createPolicyAction: Action = {
             return false;
         }
 
-        const policyService = createPolicyService(name, privyAppID, privyAppSecret, authRequestKey); // Create policy service instance
+        const policyService = createPolicyService(name, privyAppID, privyAppSecret); // Create policy service instance
 
         try {
             const newPolicy = await policyService.createPolicy(); // Call the createPolicy function

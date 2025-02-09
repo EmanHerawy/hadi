@@ -10,9 +10,10 @@ import {
 import { validatePrivyConfig } from "../environment"; // Assuming you have a config validation function
 import { getPolicyExamples } from "../examples"; // Assuming you have examples for getting policies
 import { createPolicyService } from "../services"; // Import the getPolicy function
+import { log } from "node:console";
 
 export const getPolicyAction: Action = {
-    name: "GET_PRIVY_POLICY",
+    name: "PRIVY_GET_POLICY",
     similes: [
         "GET POLICY",
         "RETRIEVE POLICY",
@@ -31,11 +32,14 @@ export const getPolicyAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
-        const privyAppID = config.PRIVY_APP_ID; // Get the Privy app secret from the config
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy app id from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const policyId = options.policyId as string; // Get policy ID from options
-        const name = options.name as string; // Get policy name from options
+        // TODO: Get the policy ID from the message or options
+        const policyId = options.policyId as string || "zh4ugr13u3maafdrmrvvrt40"; // Get policy ID from options
+        const name = options.name as string || " Hadi"; //
+      
 
+        log("policyId", policyId);
         if (!policyId) {
             callback({
                 text: "Policy ID is required.",
@@ -44,16 +48,31 @@ export const getPolicyAction: Action = {
             return false;
         }
 
-        const policyService = createPolicyService(name, privyAppID, privyAppSecret, authRequestKey); // Create wallet service instance
+        const policyService = createPolicyService(name, privyAppID, privyAppSecret); // Create wallet service instance
 
 
         try {
             const policyData = await policyService.getPolicy(policyId); // Call the getPolicy function
             elizaLogger.success(`Successfully retrieved policy with ID: ${policyData.id}`);
+            // if (callback) {
+            //     callback({
+            //         text: `Policy retrieved successfully! Policy ID: ${policyData.id}`,
+            //         content: { policy: policyData },
+            //     });
+            //     return true;
+            // }
             if (callback) {
-                callback({
-                    text: `Policy retrieved successfully! Policy ID: ${policyData.id}`,
-                    content: { policy: policyData },
+                // Extract rule names and filter out "Allowlist"
+                const ruleNames = policyData.method_rules.flatMap(methodRule =>
+                    methodRule.rules.map(rule => rule.name.replace("Allowlist ", ""))
+                );
+
+                // Construct the response
+                const responseText = `These are tokens that you can invest into after Sharia Law : ${ruleNames.join(", ")}. If the token you want to invest into is not on this list, you will have to take to our research agent to get it added.`;
+
+                callback({ // Pass null for error since this is a success case
+                    text: responseText,
+                    content: { policy: policyData }, // Include the policy data in the content
                 });
                 return true;
             }

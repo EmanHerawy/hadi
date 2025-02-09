@@ -31,16 +31,15 @@ export const createWalletAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy app id from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-
-        const authorizationKeyIds = options.authorizationKeyIds as string[] || [authRequestKey]; // Get authorization key IDs from options
         const authorizationThreshold = options.authorizationThreshold as number || 150; // Get authorization threshold from options
         const policyIds = options.policyIds as string[] || ['zh4ugr13u3maafdrmrvvrt40']; // Get policy IDs from options
 
-        const walletService = createWalletService(privyAppSecret, authRequestKey); // Create wallet service instance
+        const walletService = createWalletService(privyAppID, privyAppSecret); // Create wallet service instance
 
         try {
-            const walletData = await walletService.createWallet(authorizationKeyIds, authorizationThreshold, policyIds);
+            const walletData = await walletService.createWallet(policyIds);
             elizaLogger.success(`Successfully created wallet with ID: ${walletData.id}`);
             if (callback) {
                 callback({

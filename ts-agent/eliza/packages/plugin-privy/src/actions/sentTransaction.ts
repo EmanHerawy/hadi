@@ -31,6 +31,7 @@ export const sendTransactionAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
         const walletId = options.walletId as string; // Get wallet ID from options
         const caip2 = options.caip2 as string; // Get CAIP-2 identifier from options
@@ -44,7 +45,7 @@ export const sendTransactionAction: Action = {
             return false;
         }
 
-        const walletService = createWalletService(privyAppSecret, authRequestKey); // Create wallet service instance
+        const walletService = createWalletService(privyAppID, privyAppSecret); // Create wallet service instance
 
 
         try {
