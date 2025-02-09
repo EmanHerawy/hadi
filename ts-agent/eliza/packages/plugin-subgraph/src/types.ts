@@ -6,10 +6,30 @@ export const TokenContentSchema = z.object({
 
 export type TokenContentScemaType = z.infer<typeof TokenContentSchema>;
 
-export interface HalalScannerResponse {
-    IsHalal: boolean;
-    justification: string;
-    riskAssessment: string;
+export interface TokenTransferResponse {
+       blockNumber: number;
+    blockTimestamp: number;
+    from: string;
+    id: string;
+    to: string;
+    transactionHash: string;
+    value: string;
+ 
 }
 
+export interface TokenApprovalResponse {
+    id: string;
+    owner: string;
+    spender: string;
+    transactionHash: string;
+    value: string;
+}
 
+export interface TokenOwnershipTransferResponse {
+    blockNumber: number;
+    blockTimestamp: number;
+    id: string;
+    newOwner: string;
+    previousOwner: string;
+    transactionHash: string;
+}

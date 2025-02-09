@@ -1,7 +1,5 @@
-import  * as pkg from '@apollo/client';
+import pkg  from '@apollo/client';
 const { ApolloClient, InMemoryCache, gql } = pkg;
-
-
 
 export const createTheGraphService = (tokensQuery: string, apiKey: string) => {
     const queryTheGraph = async (): Promise< any> => {
@@ -9,6 +7,7 @@ export const createTheGraphService = (tokensQuery: string, apiKey: string) => {
             throw new Error("Invalid parameters");
         }
        
+      console.log(`hit service with query ${tokensQuery}`);
       
         try {
 
@@ -20,7 +19,10 @@ export const createTheGraphService = (tokensQuery: string, apiKey: string) => {
               .query({
                 query: gql(tokensQuery),
               })
-              .then((data) => console.log('Subgraph data: ', data))
+              .then((data) => {
+                console.log('Subgraph data: ', data)
+                return data;
+              })
               .catch((err) => {
                 console.log('Error fetching data: ', err)
               })
