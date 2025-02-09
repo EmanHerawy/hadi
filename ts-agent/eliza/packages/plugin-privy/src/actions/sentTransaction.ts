@@ -12,7 +12,7 @@ import { sendTransactionExamples } from "../examples"; // Assuming you have exam
 import { createWalletService } from "../services"; // Import the sendTransaction function
 
 export const sendTransactionAction: Action = {
-    name: "SEND_PRIVY_TRANSACTION",
+    name: "PRIVY_SEND_TRANSACTION",
     similes: [
         "SEND TRANSACTION",
         "EXECUTE TRANSACTION",

@@ -13,7 +13,7 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "Let me check our Sharia compliance policy to verify if this token is Halal.",
+                text: "This is a list of all sharia compliant tokens.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -28,7 +28,7 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "I'll check our Sharia compliance policy to verify this transaction.",
+                text: "Please check if the token is in the list of Sharia compliant tokens.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -43,8 +43,8 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "Here are the tokens that are considered Halal: [Token1, Token2, Token3].",
-                action: "PRIVY_GET_HALAL_TOKENS",
+                text: "Here are the tokens that are considered Halal.",
+                action: "PRIVY_GET_POLICY",
             },
         }
     ],
@@ -58,8 +58,8 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{agent}}",
             content: {
-                text: "The following tokens are Sharia-compliant: [TokenA, TokenB, TokenC].",
-                action: "PRIVY_GET_SHARIA_COMPLIANT_TOKENS",
+                text: "The following tokens are Sharia-compliant.",
+                action: "PRIVY_GET_POLICY",
             },
         }
     ]
@@ -154,11 +154,12 @@ export const createWalletExamples: ActionExample[][] = [
                 text: "I need to create a new wallet with authorization keys key1 and key2.",
             },
         },
+        
         {
             user: "{{agent}}",
             content: {
                 text: "I'll create a new wallet with the specified authorization keys.",
-                action: "CREATE_PRIVY_WALLET",
+                action: "PRIVY_CREATE_WALLET",
             },
         },
         {
@@ -220,7 +221,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send the specified amount to the given address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -245,7 +246,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 1.5 ETH to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -269,7 +270,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 100 USDC to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -293,7 +294,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 50 USDT to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -318,7 +319,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 0.5 ETH to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -342,7 +343,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 200 USDC to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -366,7 +367,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 0.1 ETH to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -391,7 +392,7 @@ export const sendTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll send 150 USDT to the specified address.",
-                action: "SEND_TRANSACTION",
+                action: "PRIVY_SEND_TRANSACTION",
             },
         },
         {
@@ -420,7 +421,7 @@ export const signTransactionExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll sign the transaction with the provided details.",
-                action: "SIGN_TRANSACTION",
+                action: "PRIVY_SIGN_TRANSACTION",
             },
         },
         {

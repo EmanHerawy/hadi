@@ -13,7 +13,7 @@ import { createPolicyService } from "../services"; // Import the createPolicySer
 import { boolean } from "zod";
 
 export const updatePolicyAction: Action = {
-    name: "UPDATE_PRIVY_POLICY",
+    name: "PRIVY_UPDATE_POLICY",
     similes: [
         "UPDATE POLICY",
         "EDIT POLICY",

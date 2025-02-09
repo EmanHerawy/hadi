@@ -19,11 +19,30 @@ We created an eliza plugin-privy for creating server wallets with policies.
 
 For this project we created a policy called Hadi with the ID: zh4ugr13u3maafdrmrvvrt40
 
+The agent has an allowlist of token that are sharia confirm. This list can be updated by calling the plugin to say:
+
+```
+Please add this token to the allowlist.
+```
+
 Our Agent would create all server wallet with this policy as default. 
 
 - currently the only Policies that can be created through this plugin are allowlisting of token addresses. 
 
-The following functions can be called:
+The following questions can be asked:
+
+- Is this token halal?
+- Is this token Sharia confirm?
+
+
+the following action can be taken
+- Add this token to the list of Sharia compliant tokens
+
+
+
+
+
+The halalScannerToken could call the pluginPrivy to update the policy to add a token to the allowlist. 
 
 
 

@@ -12,7 +12,7 @@ import { createWalletExamples } from "../examples"; // Assuming you have example
 import { createWalletService } from "../services"; // Import the createWalletService
 
 export const createWalletAction: Action = {
-    name: "CREATE_PRIVY_WALLET",
+    name: "PRIVY_CREATE_WALLET",
     similes: [
         "CREATE WALLET",
         "NEW WALLET",

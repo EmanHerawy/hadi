@@ -12,7 +12,7 @@ import { createPolicyExamples } from "../examples"; // Assuming you have example
 import { createPolicyService } from "../services"; // Import the createPolicyService
 
 export const createPolicyAction: Action = {
-    name: "CREATE_PRIVY_POLICY",
+    name: "PRIVY_CREATE_POLICY",
     similes: [
         "CREATE POLICY",
         "ADD POLICY",
