@@ -39,11 +39,6 @@ export const updatePolicyAction: Action = {
         const tokenAddress = message.content?.text && extractTokenAddress(message.content.text); // Get tokenAddress from options
         const remove = message.content?.text?.toLowerCase().includes("remove"); // Get remove from message
 
-        console.log("Message", message.content.text);
-        console.log("tokenName", tokenName);
-        console.log("tokenAddress", tokenAddress);
-        console.log("remove", remove);
-
         if (!policyId || (!tokenName || !tokenAddress)) {
             callback({
                 text: "Policy ID and data are required.",
@@ -59,7 +54,6 @@ export const updatePolicyAction: Action = {
 
         try {
             const updatedPolicy = await policyService.updatePolicy(policyId, tokenName, tokenAddress, remove === true); // Call the updatePolicy function
-            console.log("updatedPolicy", updatedPolicy);
             
             elizaLogger.success(`Successfully updated policy with ID: ${updatedPolicy.id}`);
             if (callback) {

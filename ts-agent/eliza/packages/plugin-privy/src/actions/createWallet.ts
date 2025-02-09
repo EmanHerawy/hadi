@@ -33,7 +33,6 @@ export const createWalletAction: Action = {
         const config = await validatePrivyConfig(runtime);
         const privyAppID = config.PRIVY_APP_ID; // Get the Privy app id from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const authorizationThreshold = options.authorizationThreshold as number || 150; // Get authorization threshold from options
         const policyIds = options.policyIds as string[] || ['zh4ugr13u3maafdrmrvvrt40']; // Get policy IDs from options
 
         const walletService = createWalletService(privyAppID, privyAppSecret); // Create wallet service instance

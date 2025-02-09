@@ -228,9 +228,6 @@ export const createPolicyService = (name: string, privyAppID: string, privyAppSe
             throw new Error("Invalid parameters");
         }
 
-        console.log("Add Token Name", tokenName);
-        
-
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
             'privy-app-id': privyAppID,
@@ -241,7 +238,6 @@ export const createPolicyService = (name: string, privyAppID: string, privyAppSe
             const url = `${BASE_URL}/${policyId}`;
             const existingPolicy = await getPolicy(policyId);
             const updatedPolicy = remove ? denylistToken(existingPolicy, tokenName, tokenAddress) : allowlistToken(existingPolicy, tokenName, tokenAddress);
-            console.log("Updated Policy", updatedPolicy);
             
             const response = await fetch(url, {
                 method: 'PATCH',
@@ -315,8 +311,6 @@ function allowlistToken(existingPolicy: PrivyPolicyResponse, tokenName: string, 
         ],
         "action": "ALLOW"
     };
-
-    console.log("Allowlisted", newRule);
     
 
     // Create a deep copy of the existing policy
