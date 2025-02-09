@@ -2,8 +2,7 @@ import { IAgentRuntime } from "@elizaos/core";
 import { z } from "zod";
 
 export const HalalScannerEnvSchema = z.object({
-    HALAL_SCANNER_API_KEY: z.string().min(1, "Halal Scanneer API key is required"),
-    HALAL_SCANNER_UUID: z.string().min(1, "Halal Scanneer UUID is required"),
+    HALAL_SCANNER_API_URL: z.string().min(1, "Halal Scanneer API  is required")
 });
 
 export type HalalScannerConfig = z.infer<typeof HalalScannerEnvSchema>;
@@ -13,8 +12,7 @@ export async function validateHalalScannerConfig(
 ): Promise<HalalScannerConfig> {
     try {
         const config = {
-            HALAL_SCANNER_API_KEY: runtime.getSetting("HALAL_SCANNER_API_KEY"),
-            HALAL_SCANNER_UUID: runtime.getSetting("HALAL_SCANNER_UUID"),
+            HALAL_SCANNER_API_URL: runtime.getSetting("HALAL_SCANNER_API_URL"),
         };
         console.log('config: ', config)
         return HalalScannerEnvSchema.parse(config);

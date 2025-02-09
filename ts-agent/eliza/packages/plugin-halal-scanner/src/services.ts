@@ -2,15 +2,14 @@ import {
     HalalScannerResponse
 } from "./types";
 
-const CREWAI_URL = "https://sharia-agent-167d14a8-db8d-4e5c-924f-61c278-11a6f99e.crewai.com/";
 const fakeResponse = {
     IsHalal: true,
     justification: "This token is halal",
     riskAssessment: "This token is low risk"
 }
-export const createHalalScannerService = (tokenName: string, apiKey: string, UUID: string) => {
+export const createHalalScannerService = (tokenName: string, CREWAI_URL: string) => {
     const checkTokenForHalalCompliance = async (): Promise<HalalScannerResponse> => {
-        if (!apiKey || !UUID ) {
+        if ( !CREWAI_URL ) {
             throw new Error("Invalid parameters");
         }
         console.log('tokenName: ', tokenName)
@@ -19,19 +18,18 @@ export const createHalalScannerService = (tokenName: string, apiKey: string, UUI
         }
       
         try {
-            const url = `${CREWAI_URL}Bearer ${apiKey}&UUID=${UUID}`; // Updated to use environment variables
+            const url = `${CREWAI_URL}`; // Updated to use environment variables
             // Fetch the URL and check if the response is OK
             const response = await fetch(url);
             if (!response.ok) {
                 console.log("error in response: ", response)
-                // If not OK, parse the error response and throw an error
-               // const error = await response.json();
-                //throw new Error(error?.message || response.statusText);
+               // If not OK, parse the error response and throw an error
+               const error = await response.json();
+                throw new Error(error?.message || response.statusText);
             }
 
             // // If the response is OK, parse the data from the response
-            // const data = await response.json();
-            const data = fakeResponse;
+             const data = await response.json();
             return data;
         } catch (error: any) {
             console.error("Halal Scanner API Error:", error.message);
