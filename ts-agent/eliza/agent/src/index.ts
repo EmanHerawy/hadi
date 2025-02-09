@@ -156,32 +156,13 @@ import { ankrPlugin } from "@elizaos/plugin-ankr";
 import { formPlugin } from "@elizaos/plugin-form";
 import { MongoClient } from "mongodb";
 import { quickIntelPlugin } from "@elizaos/plugin-quick-intel";
-import express from 'express'; // Ensure you have express imported
-
 
 import { trikonPlugin } from "@elizaos/plugin-trikon";
 import arbitragePlugin from "@elizaos/plugin-arbitrage";
 import { mainCharacter } from "./hadi.character";
 
-
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
-
-const app = express(); // Create an instance of express
-
-// CORS Middleware
-const corsMiddleware = (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS"); // Allow specific methods
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Allow specific headers
-    if (req.method === "OPTIONS") {
-        return res.sendStatus(204); // Respond with no content for OPTIONS requests
-    }
-    next();
-};
-
-// Use the CORS middleware
-app.use(corsMiddleware);
 
 export const wait = (minTime = 1000, maxTime = 3000) => {
     const waitTime =
@@ -226,6 +207,7 @@ function tryLoadFile(filePath: string): string | null {
     }
 }
 function mergeCharacters(base: Character, child: Character): Character {
+    console.log("Merging characters");
     const mergeObjects = (baseObj: any, childObj: any) => {
         const result: any = {};
         const keys = new Set([
@@ -369,6 +351,7 @@ async function jsonToCharacter(
             `Merging  ${character.name} character with parent characters`
         );
         for (const extendPath of character.extends) {
+
             const baseCharacter = await loadCharacter(
                 path.resolve(path.dirname(filePath), extendPath)
             );
@@ -1494,8 +1477,6 @@ const hasValidRemoteUrls = () =>
 const startAgents = async () => {
     const directClient = new DirectClient();
     let serverPort = Number.parseInt(settings.SERVER_PORT || "3000");
-    const args = parseArguments();
-    const charactersArg = args.characters || args.character;
     let characters = [mainCharacter];
 
 
