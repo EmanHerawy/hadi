@@ -8,13 +8,13 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Is this token Halal?",
+                text: "list all tokens allowed in my wallet",
             },
         },
         {
             user: "{{agent}}",
             content: {
-                text: "This is a list of all sharia compliant tokens.",
+                text: "This is a list of all tokens allowed in your wallet.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -86,7 +86,7 @@ export const createPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Create a policy to ensure our DeFi protocol follows Islamic principles.",
+                text: "Create a policy to add the token to my allowlist of sharia compliant tokens",
             },
         },
         {
@@ -104,13 +104,13 @@ export const updatePolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "We need to add a new Halal-certified token to our allowlist.",
+                text: "We need to add a new  token to our allowlist.",
             },
         },
         {
             user: "{{agent}}",
             content: {
-                text: "I'll update the Sharia compliance policy to include the new verified Halal token.",
+                text: "I'll update the policy to add the new token to the allowlist.",
                 action: "PRIVY_UPDATE_POLICY",
             },
         }
@@ -119,7 +119,7 @@ export const updatePolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Update our Islamic finance rules to include the latest Sharia board recommendations.",
+                text: "Update our  finance rules to include the latest Sharia board recommendations.",
             },
         },
         {
@@ -134,7 +134,7 @@ export const updatePolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "This token has lost its Halal certification. Please update the policy.",
+                text: "This token has lost its  certification. Please update the policy.",
             },
         },
         {
