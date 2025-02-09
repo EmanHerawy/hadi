@@ -104,7 +104,7 @@ export const updatePolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "We need to add a new Halal-certified token to our whitelist.",
+                text: "We need to add a new Halal-certified token to our allowlist.",
             },
         },
         {

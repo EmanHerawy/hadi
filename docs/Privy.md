@@ -13,6 +13,8 @@
 
 ## 🛠️ Technical Implementation
 
+Keywords: Policy, Allowlist
+
 // TODO: add explanation of all available functions to call and how to call them policies
 
 We created an eliza plugin-privy for creating server wallets with policies.
@@ -21,9 +23,19 @@ For this project we created a policy called Hadi with the ID: zh4ugr13u3maafdrmr
 
 The agent has an allowlist of token that are sharia confirm. This list can be updated by calling the plugin to say:
 
+Get all tokens allowlisted
 ```
-Please add this token to the allowlist.
+Hi Hadi,
+Which tokens are Halal?
 ```
+
+
+Update allowlisted tokens (add or remove)
+```
+Hi Hadi,
+Please add this BNB token with the address 0xB8c77482e45F1F44dE1745F52C74426C631bDD52 to the allowlist.
+```
+
 
 Our Agent would create all server wallet with this policy as default. 
 

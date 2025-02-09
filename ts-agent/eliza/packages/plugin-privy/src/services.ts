@@ -7,23 +7,23 @@ import { PrivyCreateWalletResponse } from "./types/wallets";
 
 const BASE_URL = "https://api.privy.io/v1/policies";
 
-export const createWalletService = (privyApiKey: string, privyAppSecret: string, authRequestKey?: string) => {
-    const createWallet = async (authorization_key_ids: string[], authorization_threshold: number, policy_ids: string[]): Promise<PrivyCreateWalletResponse> => {
+export const createWalletService = (privyAppID: string, privyAppSecret: string) => {
+    const createWallet = async (policy_ids: string[]): Promise<PrivyCreateWalletResponse> => {
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`
         };
 
         // Only add authorization signature if it exists
-        if (authRequestKey) {
-            headers['privy-authorization-signature'] = authRequestKey;
-        }
+        // if (authRequestKey) {
+        //     headers['privy-authorization-signature'] = authRequestKey;
+        // }
 
         const wallet = {
             "chain_type": "ethereum",
-            authorization_key_ids,
-            authorization_threshold,
+            authorization_key_ids : [],
+            authorization_threshold: 10,
             policy_ids
         };
 
@@ -51,8 +51,8 @@ export const createWalletService = (privyApiKey: string, privyAppSecret: string,
     const getAllWallets = async (chainType: string = "ethereum", limit: number = 150): Promise<any> => {
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`
         };
 
         try {
@@ -91,8 +91,8 @@ export const createWalletService = (privyApiKey: string, privyAppSecret: string,
     ): Promise<any> => {
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`,
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`,
             'privy-authorization-signature': authRequestKey,
         };
 
@@ -135,8 +135,8 @@ export const createWalletService = (privyApiKey: string, privyAppSecret: string,
     ): Promise<any> => {
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`,
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`,
             'privy-authorization-signature': authRequestKey,
         };
 
@@ -177,12 +177,12 @@ export const createWalletService = (privyApiKey: string, privyAppSecret: string,
     return { createWallet, getAllWallets, signTransaction, sendTransaction };
 }
 
-export const createPolicyService = (name: string, privyApiKey: string, privyAppSecret: string, authRequestKey?: string) => {
+export const createPolicyService = (name: string, privyAppID: string, privyAppSecret: string, authRequestKey?: string) => {
     const createPolicy = async (): Promise<PrivyPolicyResponse> => {
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`
         };
 
         // Only add authorization signature if it exists
@@ -228,23 +228,23 @@ export const createPolicyService = (name: string, privyApiKey: string, privyAppS
             throw new Error("Invalid parameters");
         }
 
+        console.log("Add Token Name", tokenName);
+        
+
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`
         };
-
-        // Only add authorization signature if it exists
-        if (privyAppSecret) {
-            headers['privy-authorization-signature'] = privyAppSecret;
-        }
 
         try {
             const url = `${BASE_URL}/${policyId}`;
             const existingPolicy = await getPolicy(policyId);
             const updatedPolicy = remove ? denylistToken(existingPolicy, tokenName, tokenAddress) : allowlistToken(existingPolicy, tokenName, tokenAddress);
+            console.log("Updated Policy", updatedPolicy);
+            
             const response = await fetch(url, {
-                method: 'PUT',
+                method: 'PATCH',
                 headers,
                 body: JSON.stringify(updatedPolicy)
             });
@@ -269,8 +269,8 @@ export const createPolicyService = (name: string, privyApiKey: string, privyAppS
 
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'privy-app-id': privyApiKey,
-            'Authorization': `Basic ${Buffer.from(`${privyApiKey}:${privyAppSecret}`).toString('base64')}`
+            'privy-app-id': privyAppID,
+            'Authorization': `Basic ${Buffer.from(`${privyAppID}:${privyAppSecret}`).toString('base64')}`
         };
 
         // Only add authorization signature if it exists
@@ -316,11 +316,13 @@ function allowlistToken(existingPolicy: PrivyPolicyResponse, tokenName: string, 
         "action": "ALLOW"
     };
 
+    console.log("Allowlisted", newRule);
+    
+
     // Create a deep copy of the existing policy
     const updatedPolicy: PrivyUpdatePolicy = {
         name: existingPolicy.name,
         method_rules: existingPolicy.method_rules ? [...existingPolicy.method_rules] : [],
-        default_action: existingPolicy.default_action
     };
 
     // Add the new rule if method_rules exists
@@ -336,7 +338,6 @@ function denylistToken(existingPolicy: PrivyPolicyResponse, tokenName: string, t
     const updatedPolicy: PrivyUpdatePolicy = {
         name: existingPolicy.name,
         method_rules: existingPolicy.method_rules ? [...existingPolicy.method_rules] : [],
-        default_action: existingPolicy.default_action
     };
 
     // Remove the rule for the specified token if method_rules exists

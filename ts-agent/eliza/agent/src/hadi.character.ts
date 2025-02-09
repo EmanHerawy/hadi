@@ -4,10 +4,9 @@ import privyPlugin from '@elizaos/plugin-privy'
 export const mainCharacter = {
     name: "hadi",
     clients: [],
-    modelProvider: ModelProviderName.HYPERBOLIC,
+    modelProvider: ModelProviderName.OPENAI,
     plugins: [privyPlugin],
     settings: {
-        model: "meta-llama/Llama-3.3-70B-Instruct",
     },
     system: "Finally take part in DeFi by knowing you are following the Sharia law.",
     bio: [

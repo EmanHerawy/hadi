@@ -172,8 +172,10 @@ export const wait = (minTime = 1000, maxTime = 3000) => {
 
 const logFetch = async (url: string, options: any) => {
     elizaLogger.debug(`Fetching ${url}`);
+    console.log(process.env.IQ_WALLET_ADDRESS)
+    
     // Disabled to avoid disclosure of sensitive information such as API keys
-    // elizaLogger.debug(JSON.stringify(options, null, 2));
+    elizaLogger.debug(JSON.stringify(options, null, 2));
     return fetch(url, options);
 };
 
@@ -538,7 +540,7 @@ export function getTokenForProvider(
             return "";
         case ModelProviderName.BEDROCK:
             return "";
-        case ModelProviderName.OPENAI:
+        case ModelProviderName.OPENAI:  
             return (
                 character.settings?.secrets?.OPENAI_API_KEY ||
                 settings.OPENAI_API_KEY
