@@ -9,26 +9,98 @@
 ## 🚀 How Hadi AI Uses Privy
 ✅ **Provides seamless onboarding for Web3 & non-Web3 users.**  
 ✅ **Implements server wallets for AI-driven DeFi investments.**  
-✅ **Uses Privy’s Policy Engine to enforce trading limits.**  
+✅ **Uses Privy’s Policy Engine to allowlist tokens.**  
 
 ## 🛠️ Technical Implementation
+
+Keywords: Policy, Allowlist
+
+// TODO: add explanation of all available functions to call and how to call them policies
+
+We created an eliza plugin-privy for creating server wallets with policies.
+
+For this project we created a policy called Hadi with the ID: zh4ugr13u3maafdrmrvvrt40
+
+The agent has an allowlist of token that are sharia confirm. This list can be updated by calling the plugin to say:
+
+Get all tokens allowlisted
+```
+Hi Hadi,
+Which tokens are Halal?
+```
+
+| halo | nein |
+| ---- | ---- |
+| nein | nein |
+
+
+Update allowlisted tokens (add or remove)
+```
+Hi Hadi,
+Please add this BNB token with the address 0xB8c77482e45F1F44dE1745F52C74426C631bDD52 to the allowlist.
+```
+
+
+Create a Wallet that autonatically has these policies implemented
+
+```
+Hi Hadi, 
+I need to create a new wallet that has Sharia law implemented.
+```
+
+Our Agent would create all server wallet with this policy as default. 
+
+- currently the only Policies that can be created through this plugin are allowlisting of token addresses. 
+- TODO: Add roadmap
+
+
+
+the following action can be taken
+- Add this token to the list of Sharia compliant tokens
+
+
+
+
+
+The halalScannerToken could call the pluginPrivy to update the policy to add a token to the allowlist. 
+
+
+
+
+## Docs Feedback
+
+- Example on the [Create Policy page](https://docs.privy.io/guide/server-wallets/policies/create#example) adn update policy has to many commas and is throwing an Invalid JSON error
+- The issues were:
+    Missing comma after "name": "Allowlist USDC"
+    Extra comma after the conditions object
+    Extra comma after the method_rules array
+    Remember in JSON:
+    You need commas between items in arrays and objects
+    You should not have a comma after the last item in an array or object
+- Example on the Update Policy page is throwing an error:
+  - The changes:
+    Removed the default_action field since it's not allowed in the PATCH request
+    Only included the method_rules which is what we want to update
+    Remember:
+    default_action can only be set during policy creation (POST request)
+    PATCH requests should only include the fields you want to update
+- When I google for policy engine, the first result in the google search leads to a 404: https://docs.privy.io/guide/wallet-api/policies
+
+
 1. **Generate Embedded Wallets for Users**:
     ```python
     user_wallet = privy.create_wallet(user_email="investor@example.com")
     ```
 
-2. **Enforce AI-Driven Trade Limits**:
+2. **Enforce AI-Driven Allowlist based on the agents research**:
     ```python
     privy.set_policy(wallet=user_wallet, max_tx_per_day=3)
     ```
 
 ## 🔧 Setup Instructions
 1. **Clone Repo & Install Dependencies**:
-    ```bash
-    git clone https://github.com/hadi-ai/hadi-privy.git
-    cd hadi-privy
-    pip install privy-sdk
-    ```
+    // TODO: which ENV variables to add
+    // TODO: how to set up the plugin
 
 2. **Run Server Wallets**:
     ```bash
@@ -42,3 +114,6 @@
 
 ## 🔮 Future Enhancements
 🚀 **Integrate Privy’s social logins for seamless DeFi execution.**  
+
+
+

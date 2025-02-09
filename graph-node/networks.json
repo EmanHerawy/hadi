@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "HalaScannerToken": {
+      "address": "0x35a14710056f499ae14bd2e248730d2836c55602",
+      "startBlock": 7668239
+    }
+  }
+}
