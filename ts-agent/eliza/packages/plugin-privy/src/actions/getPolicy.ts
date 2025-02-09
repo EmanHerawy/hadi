@@ -33,7 +33,6 @@ export const getPolicyAction: Action = {
         const config = await validatePrivyConfig(runtime);
         const privyAppID = config.PRIVY_APP_ID; // Get the Privy app secret from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const authRequestKey = config.AUTH_REQUEST_KEY; // Get the Privy app secret from the config
         const policyId = options.policyId as string; // Get policy ID from options
         const name = options.name as string; // Get policy name from options
 

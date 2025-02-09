@@ -2,6 +2,7 @@ import { ActionExample } from "@elizaos/core";
 
 
 
+// TODO: Important - Add more examples for this actions
 export const getPolicyExamples: ActionExample[][] = [
     [
         {
@@ -97,7 +98,7 @@ export const createPolicyExamples: ActionExample[][] = [
         }
     ]
 ];
-
+// TODO: Important - Add more examples for this actions
 export const updatePolicyExamples: ActionExample[][] = [
     [
         {
@@ -145,7 +146,7 @@ export const updatePolicyExamples: ActionExample[][] = [
         }
     ]
 ];
-
+// TODO: Important - Add more examples for this actions
 export const createWalletExamples: ActionExample[][] = [
     [
         {
@@ -171,7 +172,7 @@ export const createWalletExamples: ActionExample[][] = [
                         id: "<wallet_id>",
                         address: "<wallet_address>",
                         chain_type: "ethereum",
-                        policy_ids: ["policy1"],
+                        policy_ids: ["Hadi"],
                     },
                 },
             },
@@ -209,6 +210,8 @@ export const getAllWalletsExamples: ActionExample[][] = [
     ],
 ];
 
+
+// TODO: Important - Add more examples for this actions
 export const sendTransactionExamples: ActionExample[][] = [
     [
         {

@@ -32,7 +32,6 @@ export const createWalletAction: Action = {
     ) => {
         const config = await validatePrivyConfig(runtime);
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
-        const authRequestKey = config.AUTH_REQUEST_KEY; // Get the authorization request key from options
 
         const authorizationKeyIds = options.authorizationKeyIds as string[] || [authRequestKey]; // Get authorization key IDs from options
         const authorizationThreshold = options.authorizationThreshold as number || 150; // Get authorization threshold from options
