@@ -14,6 +14,8 @@
 
 Keywords: Policy, Allowlist
 
+
+
 ## What Did We Implement
 
 - We created an Eliza plugin-privy for creating server wallets with policies: https://github.com/EmanHerawy/hadi/tree/main/ts-agent/eliza/packages/plugin-privy
@@ -60,9 +62,37 @@ I need to create a new wallet that has Sharia law implemented.
 
 The halalScannerToken could call the pluginPrivy to update the policy to add a token to the allowlist. 
 
-## Who Built It
+## Who Built It?
 
 https://github.com/GigaHierz
+
+
+
+## How to run the Privy Plugin?
+
+1. add these two ENV variables to your .env file
+
+```
+#Privy Configuration
+PRIVY_APP_ID=
+PRIVY_APP_SECRET=
+```
+
+2. Call the Plugin in your Characterfile like this
+
+
+```typescript
+import { ModelProviderName, Clients } from "@elizaos/core";
+import privyPlugin from '@elizaos/plugin-privy'
+
+export const mainCharacter = {
+    name: "hadi",
+    clients: [],
+    modelProvider: ModelProviderName.OPENAI,
+    plugins: [privyPlugin],
+    settings: {
+    },
+```
 
 ## DevEX Feedback
 
@@ -82,6 +112,8 @@ https://github.com/GigaHierz
     default_action can only be set during policy creation (POST request).
     PATCH requests should only include the fields you want to update.
 - When I Google for policy engine, the first result in the Google search leads to a 404: https://docs.privy.io/guide/wallet-api/policies
+
+
 
 1. **Generate Embedded Wallets for Users**:
     ```python
