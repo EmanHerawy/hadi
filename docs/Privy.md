@@ -29,6 +29,10 @@ Hi Hadi,
 Which tokens are Halal?
 ```
 
+| halo | nein |
+| ---- | ---- |
+| nein | nein |
+
 
 Update allowlisted tokens (add or remove)
 ```
