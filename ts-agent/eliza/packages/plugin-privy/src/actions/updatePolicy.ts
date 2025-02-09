@@ -32,7 +32,7 @@ export const updatePolicyAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
-        const privyApiKey = config.PRIVY_API_KEY; // Get the Privy API key from the config
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
         const authRequestKey = config.AUTH_REQUEST_KEY; // Get the authorization request key from the config
         const policyId = options.policyId as string; // Get policy ID from options
@@ -48,7 +48,7 @@ export const updatePolicyAction: Action = {
             return false;
         }
 
-        const policyService = createPolicyService("", privyApiKey, privyAppSecret, authRequestKey); // Create policy service instance
+        const policyService = createPolicyService("", privyAppID, privyAppSecret, authRequestKey); // Create policy service instance
 
         try {
             const updatedPolicy = await policyService.updatePolicy(policyId, tokenName, tokenAddress, remove === true); // Call the updatePolicy function

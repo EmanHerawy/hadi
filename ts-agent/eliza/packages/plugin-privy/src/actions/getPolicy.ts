@@ -31,7 +31,7 @@ export const getPolicyAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
-        const privyApiKey = config.PRIVY_API_KEY; // Get the Privy app secret from the config
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy app secret from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
         const authRequestKey = config.AUTH_REQUEST_KEY; // Get the Privy app secret from the config
         const policyId = options.policyId as string; // Get policy ID from options
@@ -45,7 +45,7 @@ export const getPolicyAction: Action = {
             return false;
         }
 
-        const policyService = createPolicyService(name, privyApiKey, privyAppSecret, authRequestKey); // Create wallet service instance
+        const policyService = createPolicyService(name, privyAppID, privyAppSecret, authRequestKey); // Create wallet service instance
 
 
         try {

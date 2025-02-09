@@ -31,7 +31,6 @@ export const sendTransactionAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
-        const privyApiKey = config.PRIVY_API_KEY; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
         const authRequestKey = config.AUTH_REQUEST_KEY; // Get the authorization request key from the config
         const walletId = options.walletId as string; // Get wallet ID from options

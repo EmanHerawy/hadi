@@ -439,6 +439,9 @@ importers:
       '@elizaos/plugin-primus':
         specifier: workspace:*
         version: link:../packages/plugin-primus
+      '@elizaos/plugin-privy':
+        specifier: workspace:*
+        version: link:../packages/plugin-privy
       '@elizaos/plugin-pyth-data':
         specifier: workspace:*
         version: link:../packages/plugin-pyth-data
@@ -4131,6 +4134,25 @@ importers:
       tsup:
         specifier: 8.3.5
         version: 8.3.5(@swc/core@1.10.14(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
+
+  packages/plugin-privy:
+    dependencies:
+      '@elizaos/core':
+        specifier: workspace:*
+        version: link:../core
+      tsup:
+        specifier: 8.3.5
+        version: 8.3.5(@swc/core@1.10.14(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
+      whatwg-url:
+        specifier: 7.1.0
+        version: 7.1.0
+      zod:
+        specifier: ^3.22.4
+        version: 3.24.1
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.17.9
 
   packages/plugin-pyth-data:
     dependencies:
@@ -33799,7 +33821,7 @@ snapshots:
       '@anthropic-ai/sdk': 0.30.1(encoding@0.1.13)
       '@fal-ai/client': 1.2.0
       '@types/uuid': 10.0.0
-      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.24.1))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
+      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
       anthropic-vertex-ai: 1.0.2(encoding@0.1.13)(zod@3.23.8)
       fastembed: 1.14.1
       fastestsmallesttextencoderdecoder: 1.0.22
@@ -33852,7 +33874,7 @@ snapshots:
       '@fal-ai/client': 1.2.0
       '@tavily/core': 0.0.2
       '@types/uuid': 10.0.0
-      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.24.1))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
+      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
       anthropic-vertex-ai: 1.0.2(encoding@0.1.13)(zod@3.23.8)
       dotenv: 16.4.5
       fastembed: 1.14.1
@@ -33910,7 +33932,7 @@ snapshots:
       '@fal-ai/client': 1.2.0
       '@tavily/core': 0.0.2
       '@types/uuid': 10.0.0
-      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.24.1))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
+      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
       anthropic-vertex-ai: 1.0.2(encoding@0.1.13)(zod@3.23.8)
       dotenv: 16.4.5
       fastembed: 1.14.1
@@ -33968,7 +33990,7 @@ snapshots:
       '@fal-ai/client': 1.2.0
       '@tavily/core': 0.0.2
       '@types/uuid': 10.0.0
-      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.24.1))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
+      ai: 3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8)
       anthropic-vertex-ai: 1.0.2(encoding@0.1.13)(zod@3.23.8)
       dotenv: 16.4.5
       fastembed: 1.14.1
@@ -46119,7 +46141,7 @@ snapshots:
 
   '@types/bs58@4.0.4':
     dependencies:
-      '@types/node': 22.13.1
+      '@types/node': 20.17.9
       base-x: 3.0.10
 
   '@types/cacheable-request@6.0.3':
@@ -47930,7 +47952,7 @@ snapshots:
     dependencies:
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/safe-json': 1.0.2
-      cross-fetch: 3.1.8(encoding@0.1.13)
+      cross-fetch: 3.2.0(encoding@0.1.13)
       events: 3.3.0
     transitivePeerDependencies:
       - encoding
@@ -48975,7 +48997,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  ai@3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.24.1))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8):
+  ai@3.4.33(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))(react@19.0.0)(sswr@2.1.0(svelte@5.19.9))(svelte@5.19.9)(vue@3.5.13(typescript@5.7.3))(zod@3.23.8):
     dependencies:
       '@ai-sdk/provider': 1.0.6
       '@ai-sdk/provider-utils': 2.1.6(zod@3.23.8)
@@ -53828,7 +53850,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:

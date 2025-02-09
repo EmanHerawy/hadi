@@ -8,7 +8,7 @@ import { signTransactionAction } from "./actions/signTransaction";
 
 
 
-export const privyPlugin: Plugin = {
+const privyPlugin: Plugin = {
     name: "privy",
     description: "PRIVY plugin for Eliza",
     actions: [getPolicyAction, createPolicyAction, updatePolicyAction, createWalletAction, sendTransactionAction, signTransactionAction],

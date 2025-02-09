@@ -21,9 +21,11 @@ For this project we created a policy called Hadi with the ID: zh4ugr13u3maafdrmr
 
 Our Agent would create all server wallet with this policy as default. 
 
+- currently the only Policies that can be created through this plugin are allowlisting of token addresses. 
+
 The following functions can be called:
 
-- currently the only Policies that can be created through this plugin are allowlisting of token addresses
+
 
 
 ## Docs Feedback

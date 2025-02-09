@@ -31,20 +31,20 @@ export const createPolicyAction: Action = {
         callback: HandlerCallback
     ) => {
         const config = await validatePrivyConfig(runtime);
-        const privyApiKey = config.PRIVY_API_KEY; // Get the Privy API key from the config
+        const privyAppID = config.PRIVY_APP_ID; // Get the Privy API key from the config
         const privyAppSecret = config.PRIVY_APP_SECRET; // Get the Privy app secret from the config
         const authRequestKey = config.AUTH_REQUEST_KEY; // Get the authorization request key from the config
-        const policyData = options.policyData; // Get policy data from options
+        const name = options.name as string; // Get name from options
 
-        if (!policyData) {
+        if (!name) {
             callback({
-                text: "Policy data is required.",
-                content: { error: "Policy data is required." },
+                text: "A Name is required.",
+                content: { error: "A Name is required." },
             });
             return false;
         }
 
-        const policyService = createPolicyService("", privyApiKey, privyAppSecret, authRequestKey); // Create policy service instance
+        const policyService = createPolicyService(name, privyAppID, privyAppSecret, authRequestKey); // Create policy service instance
 
         try {
             const newPolicy = await policyService.createPolicy(); // Call the createPolicy function
