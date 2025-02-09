@@ -207,7 +207,6 @@ function tryLoadFile(filePath: string): string | null {
     }
 }
 function mergeCharacters(base: Character, child: Character): Character {
-    cons
     const mergeObjects = (baseObj: any, childObj: any) => {
         const result: any = {};
         const keys = new Set([
