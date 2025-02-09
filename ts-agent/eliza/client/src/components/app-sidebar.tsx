@@ -37,16 +37,16 @@ export function AppSidebar() {
                         <SidebarMenuButton size="lg" asChild>
                             <NavLink to="/">
                                 <img
-                                    alt="elizaos-icon"
-                                    src="/elizaos-icon.png"
+                                    alt="hadi-icon"
+                                    src="/hadi-icon.jpg"
                                     width="100%"
                                     height="100%"
-                                    className="size-7"
+                                    className="size-12 rounded-full" // Added 'rounded-full' class for round icon
                                 />
 
                                 <div className="flex flex-col gap-0.5 leading-none">
                                     <span className="font-semibold">
-                                        ElizaOS
+                                        Hadi
                                     </span>
                                     <span className="">v{info?.version}</span>
                                 </div>
