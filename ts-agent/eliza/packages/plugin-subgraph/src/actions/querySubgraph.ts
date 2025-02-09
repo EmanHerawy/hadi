@@ -142,11 +142,12 @@ export const queryTokensInfoAction: Action = {
         const APIURL = `https://gateway.thegraph.com/api/${config.THE_GRAPH_API_KEY}/subgraphs/id/${config.THE_GRAPH_SUBGRAPH_ID}`
         //    const APIURL = `https://gateway-testnet-arbitrum.network.thegraph.com/api/${config.THE_GRAPH_API_KEY}/subgraphs/id/${config.THE_GRAPH_SUBGRAPH_ID}`
         const query = `{
-               accounts {
-                poolBalances
-                poolBalancesUSD
-                
-            }
+               tokens(first: 10) {
+                id
+                name
+                symbol
+                decimals
+                }
             }`
         const theGraphService = createTheGraphService(
             query,
@@ -162,7 +163,7 @@ export const queryTokensInfoAction: Action = {
             );
             if (callback) {
                 callback({
-                    text: `Here is the subgraph data:\n${formatSubgraphData(subgraphData)}`
+                    text: `Here is the subgraph data:\n${formatTokens(subgraphData)}`
                 });
                 return subgraphData;
             }
@@ -280,6 +281,33 @@ const formatSubgraphData = (data: any): string => {
         }).join("\n");
 
         output += accountInfo + (depositsInfo || '  - No deposits available') + '\n\n';
+    });
+
+    return output.trim(); // Remove any trailing whitespace
+};
+
+const formatPoolBalances = (data: any): string => {
+    let output = '';
+
+    data.accounts.forEach((account: any) => {
+        const accountInfo = `Account ID: ${account.id}\n`;
+        const poolBalancesInfo = account.poolBalances.map((balance: any) => {
+            return `  - Pool Balance: ${balance.amount}, Pool Balance USD: ${balance.amountUSD}`;
+        }).join("\n");
+
+        output += accountInfo + (poolBalancesInfo || '  - No pool balances available') + '\n\n';
+    });
+
+    return output.trim(); // Remove any trailing whitespace
+};
+
+
+const formatTokens = (data: any): string => {
+    let output = '';
+
+    data.tokens.forEach((token: any) => {
+        const tokenInfo = `Token ID: ${token.id}, Name: ${token.name}, Symbol: ${token.symbol}, Decimals: ${token.decimals}\n`;
+        output += tokenInfo;
     });
 
     return output.trim(); // Remove any trailing whitespace
