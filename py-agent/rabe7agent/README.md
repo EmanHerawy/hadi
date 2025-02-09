@@ -267,7 +267,11 @@ For support, questions, or feedback regarding the Rabe7Agent Crew or crewAI.
    
    <!-- Demo -->
   - ## :cinema: Demo
-
+https://www.loom.com/share/0c7076596f714f9c8c358d065ca01063?sid=e100e599-4305-4915-9f47-3a706c3fc7a3
   
+
+
+https://github.com/user-attachments/assets/118b695c-ade4-4df6-96da-feebb1d5501e
+
 
 
