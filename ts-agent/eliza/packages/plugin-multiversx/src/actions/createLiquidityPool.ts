@@ -163,7 +163,7 @@ export default {
             const apiNetworkProvider = new ApiNetworkProvider(
                 networkConfig.apiURL,
                 {
-                    clientName: "ElizaOs",
+                    clientName: "Hadi",
                 }
             );
 

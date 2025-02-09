@@ -207,7 +207,7 @@ function tryLoadFile(filePath: string): string | null {
     }
 }
 function mergeCharacters(base: Character, child: Character): Character {
-    console.log("Merging characters");
+    cons
     const mergeObjects = (baseObj: any, childObj: any) => {
         const result: any = {};
         const keys = new Set([
