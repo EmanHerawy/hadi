@@ -80,56 +80,6 @@ Hadi introduces an agent-based system that automates the entire ethical investme
 
 
 
-<!-- Deployed Dapp URL -->
-## :link: Deployed Dapp URL 
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<!-- TechStack -->
-### :space_invader: Tech Stack
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-    
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-  <li><a href="https://aws.amazon.com/">Amazon DynamoDB</a></li>
-  </ul>
-</details>
-
-
-<details>
-<summary>Backend</summary>
-  <ul> 
-    <li><a href="https://aws.amazon.com/it/elasticbeanstalk/">Amazon Cloud Elastic-beanstalk</a></li>
-    <li><a href="https://www.nodejs.org/">Nodejs</a></li>
-  </ul>
-</details>
-
-
-<details>
-<summary>Web3</summary>
-  <li><a href="https://hardhat.org/">Hardhat</a></li>
-  <li><a href="https://chain.link/keepers/">Chainlink</a></li>
-  <li><a href="https://docs.ethers.io/v5/">Etherjs</a></li>
-  <ul> 
-</details>
   
   
 
