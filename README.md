@@ -80,56 +80,6 @@ Hadi introduces an agent-based system that automates the entire ethical investme
 
 
 
-<!-- Deployed Dapp URL -->
-## :link: Deployed Dapp URL 
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<!-- TechStack -->
-### :space_invader: Tech Stack
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-    
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-  <li><a href="https://aws.amazon.com/">Amazon DynamoDB</a></li>
-  </ul>
-</details>
-
-
-<details>
-<summary>Backend</summary>
-  <ul> 
-    <li><a href="https://aws.amazon.com/it/elasticbeanstalk/">Amazon Cloud Elastic-beanstalk</a></li>
-    <li><a href="https://www.nodejs.org/">Nodejs</a></li>
-  </ul>
-</details>
-
-
-<details>
-<summary>Web3</summary>
-  <li><a href="https://hardhat.org/">Hardhat</a></li>
-  <li><a href="https://chain.link/keepers/">Chainlink</a></li>
-  <li><a href="https://docs.ethers.io/v5/">Etherjs</a></li>
-  <ul> 
-</details>
   
   
 
@@ -255,19 +205,39 @@ For support, questions, or feedback regarding the Rabe7Agent Crew or crewAI.
 <!-- Team -->
 ## :wave: Team
 
-| Member             | Title                                                  | Description                                       | Linkedin                                           | GitHub        |
-| ------------------ | ------------------------------------------------------ | ------------------------------------------------- | -------------------------------------------------- | ------------- |
-| Eman Herawy        | Blockchain Developer & Smart Contract Security Auditor | Setting-up agents                                 | https://www.linkedin.com/in/emanherawy/            | Eman Herawy   |
-| Mohamed Sharabassy | Data Scientist                                         | Coordinate the project technicals                 | https://www.linkedin.com/in/mohamedsharabassy/     | Mo-Sharabassy |
-| Lena Hierz         | Developer                                              | Designing the agent economy & front-end           | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | GigaHierz     |
-| Nada Jabr          | Business Developer                                     | Defining agents' roles, needed tools and plug-ins | https://www.linkedin.com/in/nada-jabr-15838b39/    | NJ-2021       |
+| Member | Title | Description | Linkedin | GitHub   |
+| ----------- | ----------- | ----------- |----------- |----------- |
+| Eman Herawy      | Blockchain Developer & Smart Contract Security Auditor  | Setting-up agents            |   https://www.linkedin.com/in/emanherawy/    | Eman Herawy |
+| Mohamed Sharabassy| Data Scientist     | Coordinate the project technicals | https://www.linkedin.com/in/mohamedsharabassy/                 | Mo-Sharabassy             |
+| Lena Hierz   | Developer  | Designing the agent economy & front-end          | https://www.linkedin.com/in/lena-hierzi-8221151ab/ | GigaHierz       |
+| Nada Jabr  | Business Developer | Defining agents' roles, needed tools and plug-ins           | https://www.linkedin.com/in/nada-jabr-15838b39/  | NJ-2021        |
 
 
  
    
    <!-- Demo -->
   - ## :cinema: Demo
+    
+https://www.loom.com/share/0c7076596f714f9c8c358d065ca01063?sid=e100e599-4305-4915-9f47-3a706c3fc7a3
 
   
 
 
+![photo_2025-02-09_19-50-48](https://github.com/user-attachments/assets/36f1ebe8-66d2-4d42-aaf9-2d070747f1c5)
+
+
+
+
+https://github.com/user-attachments/assets/118b695c-ade4-4df6-96da-feebb1d5501e
+
+
+
+
+
+https://www.loom.com/share/e3febeca52e44995ac93c096fa23eb6a?sid=661057ee-9d9e-48df-b59b-22560a00fd88
+
+
+  <!-- Presentation -->
+  - ## :cinema: Presentation
+
+https://www.canva.com/design/DAGeC97imJw/UxXM3Kdx_JXjo4hBiqcDig/view?utm_content=DAGeC97imJw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5702b42d5e
