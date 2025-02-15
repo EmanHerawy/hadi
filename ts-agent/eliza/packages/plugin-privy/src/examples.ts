@@ -23,13 +23,13 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Can you verify if this transaction follows Islamic finance principles?",
+                text: "Can you verify if this token is in my allowlist?",
             },
         },
         {
             user: "{{agent}}",
             content: {
-                text: "Please check if the token is in the list of Sharia compliant tokens.",
+                text: "Please check if the token is in the list of tokens allowed in your wallet.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -38,13 +38,13 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Which tokens are Halal?",
+                text: "Which tokens are allowed in my wallet?",
             },
         },
         {
             user: "{{agent}}",
             content: {
-                text: "Here are the tokens that are considered Halal.",
+                text: "Here are the tokens that are allowed in your wallet.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -53,13 +53,13 @@ export const getPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "Can you give me a list of tokens that are Sharia-compliant?",
+                text: "Can you give me a list of tokens that are allowed in my wallet?",
             },
         },
         {
             user: "{{agent}}",
             content: {
-                text: "The following tokens are Sharia-compliant.",
+                text: "The following tokens are allowed in your wallet.",
                 action: "PRIVY_GET_POLICY",
             },
         }
@@ -71,7 +71,7 @@ export const createPolicyExamples: ActionExample[][] = [
         {
             user: "{{user1}}",
             content: {
-                text: "We need to set up rules for Sharia-compliant trading.",
+                text: "We need to set up rules for allowed tokens in my wallet.",
             },
         },
         {
