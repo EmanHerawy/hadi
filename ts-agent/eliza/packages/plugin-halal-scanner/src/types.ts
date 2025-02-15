@@ -1,7 +1,8 @@
 import { z } from "zod";
 
 export const TokenContentSchema = z.object({
-    tokenName: z.string()
+    tokenName: z.string(),
+    agentTaskId: z.string()
 });
 
 export type TokenContentScemaType = z.infer<typeof TokenContentSchema>;

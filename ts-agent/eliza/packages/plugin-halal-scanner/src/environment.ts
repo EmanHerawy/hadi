@@ -2,7 +2,8 @@ import { IAgentRuntime } from "@elizaos/core";
 import { z } from "zod";
 
 export const HalalScannerEnvSchema = z.object({
-    HALAL_SCANNER_API_URL: z.string().min(1, "Halal Scanneer API  is required")
+    HALAL_SCANNER_API_URL: z.string().min(1, "Halal Scanneer API  is required"),
+    HALAL_SCANNER_BEARER_TOKEN: z.string().min(1, "Halal Scanneer Bearer Token is required")
 });
 
 export type HalalScannerConfig = z.infer<typeof HalalScannerEnvSchema>;
@@ -13,6 +14,7 @@ export async function validateHalalScannerConfig(
     try {
         const config = {
             HALAL_SCANNER_API_URL: runtime.getSetting("HALAL_SCANNER_API_URL"),
+            HALAL_SCANNER_BEARER_TOKEN: runtime.getSetting("HALAL_SCANNER_BEARER_TOKEN")
         };
         console.log('config: ', config)
         return HalalScannerEnvSchema.parse(config);

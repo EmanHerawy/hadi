@@ -101,25 +101,34 @@ export const getTokenStatusAction: Action = {
 
         const halalScannerService = createHalalScannerService(
             content.object.tokenName,
-            config.HALAL_SCANNER_API_KEY,
-            config.HALAL_SCANNER_UUID
+            config.HALAL_SCANNER_API_URL,
+            config.HALAL_SCANNER_BEARER_TOKEN,
+            content.object.agentTaskId 
         );
 
         try {
-            const halalStatus = await halalScannerService.checkTokenForHalalCompliance();
+            const response = await halalScannerService.checkTokenForHalalCompliance();
             elizaLogger.success(
                 `Successfully fetched halal status`
             );
             if (callback) {
-                callback({
-                    text: `Here is the halal status of the token: ${halalStatus.IsHalal}`
-                });
+                if (content.object.agentTaskId) {
+                    callback({
+                        text: `Here is the halal status of the token:${JSON.stringify(response)}`,
+                    });
+                }
+                else {
+                    callback({
+                        text: `CrewAI Agent Task has been created, it would take a few minutes to complete. You can use the following id to get the status after it is completed: ${JSON.stringify(response)}`
+
+                    });
+                }
                 return true;
             }
         } catch (error:any) {
-            elizaLogger.error("Error in NASA plugin handler:", error);
+            elizaLogger.error("Error in HALAL SCANNER plugin handler:", error);
             callback({
-                text: `Error fetching APOD: ${error.message}`,
+                text: `Error fetching HALAL SCANNER: ${error.message}`,
                 content: { error: error.message },
             });
             return false;

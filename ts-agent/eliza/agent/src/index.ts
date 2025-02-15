@@ -1305,6 +1305,7 @@ export async function createAgent(
                 : null,
             getSecret(character, "GELATO_RELAY_API_KEY") ? gelatoPlugin : null,
             getSecret(character, "TRIKON_WALLET_ADDRESS") ? trikonPlugin : null,
+            
             getSecret(character, "ARBITRAGE_EVM_PRIVATE_KEY") &&
             (getSecret(character, "ARBITRAGE_EVM_PROVIDER_URL") ||
                 getSecret(character, "ARBITRAGE_ETHEREUM_WS_URL")) &&
@@ -1317,7 +1318,8 @@ export async function createAgent(
                 ? SubgraphPlugin
                 : null,
             getSecret(character, "RPC_URL") &&
-            getSecret(character, "SAFE_PRIVATE_KEY")
+            getSecret(character, "SIGNER_PRIVATE_KEY") &&
+            getSecret(character, "SAFE_ADDRESS")
                 ? SafePlugin
                 : null,
             // privy plugin
@@ -1330,7 +1332,8 @@ export async function createAgent(
                 ? deskExchangePlugin
                 : null,
             // halal scanner
-            getSecret(character, "HALAL_SCANNER_API_KEY")
+            getSecret(character, "HALAL_SCANNER_API_URL") &&
+            getSecret(character, "HALAL_SCANNER_BEARER_TOKEN")
                 ? HalalScannerPlugin
                 : null,
         ]
