@@ -160,6 +160,8 @@ import { quickIntelPlugin } from "@elizaos/plugin-quick-intel";
 import { SubgraphPlugin } from "@elizaos/plugin-subgraph";
 import { trikonPlugin } from "@elizaos/plugin-trikon";
 import arbitragePlugin from "@elizaos/plugin-arbitrage";
+import {privyPlugin} from '@elizaos/plugin-privy'
+import {SafePlugin} from "@elizaos/plugin-safe";
 
 
 // halal scanner
@@ -1313,6 +1315,15 @@ export async function createAgent(
             getSecret(character, "THE_GRAPH_API_KEY") &&
             getSecret(character, "THE_GRAPH_SUBGRAPH_ID")
                 ? SubgraphPlugin
+                : null,
+            getSecret(character, "RPC_URL") &&
+            getSecret(character, "SAFE_PRIVATE_KEY")
+                ? SafePlugin
+                : null,
+            // privy plugin
+            getSecret(character, "PRIVY_APP_ID") &&
+            getSecret(character, "PRIVY_APP_SECRET")
+                ? privyPlugin
                 : null,
             getSecret(character, "DESK_EXCHANGE_PRIVATE_KEY") ||
             getSecret(character, "DESK_EXCHANGE_NETWORK")
