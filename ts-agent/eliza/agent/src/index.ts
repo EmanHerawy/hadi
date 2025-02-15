@@ -160,6 +160,8 @@ import { quickIntelPlugin } from "@elizaos/plugin-quick-intel";
 import { SubgraphPlugin } from "@elizaos/plugin-subgraph";
 import { trikonPlugin } from "@elizaos/plugin-trikon";
 import arbitragePlugin from "@elizaos/plugin-arbitrage";
+import {privyPlugin} from '@elizaos/plugin-privy'
+import {SafePlugin} from "@elizaos/plugin-safe";
 
 
 // halal scanner
@@ -1303,6 +1305,7 @@ export async function createAgent(
                 : null,
             getSecret(character, "GELATO_RELAY_API_KEY") ? gelatoPlugin : null,
             getSecret(character, "TRIKON_WALLET_ADDRESS") ? trikonPlugin : null,
+            
             getSecret(character, "ARBITRAGE_EVM_PRIVATE_KEY") &&
             (getSecret(character, "ARBITRAGE_EVM_PROVIDER_URL") ||
                 getSecret(character, "ARBITRAGE_ETHEREUM_WS_URL")) &&
@@ -1314,12 +1317,23 @@ export async function createAgent(
             getSecret(character, "THE_GRAPH_SUBGRAPH_ID")
                 ? SubgraphPlugin
                 : null,
+            getSecret(character, "RPC_URL") &&
+            getSecret(character, "SIGNER_PRIVATE_KEY") &&
+            getSecret(character, "SAFE_ADDRESS")
+                ? SafePlugin
+                : null,
+            // privy plugin
+            getSecret(character, "PRIVY_APP_ID") &&
+            getSecret(character, "PRIVY_APP_SECRET")
+                ? privyPlugin
+                : null,
             getSecret(character, "DESK_EXCHANGE_PRIVATE_KEY") ||
             getSecret(character, "DESK_EXCHANGE_NETWORK")
                 ? deskExchangePlugin
                 : null,
             // halal scanner
-            getSecret(character, "HALAL_SCANNER_API_KEY")
+            getSecret(character, "HALAL_SCANNER_API_URL") &&
+            getSecret(character, "HALAL_SCANNER_BEARER_TOKEN")
                 ? HalalScannerPlugin
                 : null,
         ]
